@@ -1,1 +1,0 @@
-This project contains auxiliary classes that can be used by all server side components.

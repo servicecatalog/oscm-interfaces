@@ -1,1 +1,0 @@
-The 1.6 to current and back converter.

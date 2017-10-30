@@ -1,1 +1,0 @@
-The web service test project for the BES application.

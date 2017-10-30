@@ -1,1 +1,0 @@
-The marketplace management service implementation.

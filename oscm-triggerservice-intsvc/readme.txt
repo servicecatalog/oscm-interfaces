@@ -1,1 +1,0 @@
-The internal interface of the trigger service component.
