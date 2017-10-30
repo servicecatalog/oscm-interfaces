@@ -1,1 +1,0 @@
-The ui tests for the portal.

@@ -1,1 +1,0 @@
-This projects contains the service to handle the i18n.

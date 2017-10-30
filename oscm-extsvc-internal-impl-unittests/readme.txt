@@ -1,1 +1,0 @@
-The unit tests of the VO-assemblers and remote facade.

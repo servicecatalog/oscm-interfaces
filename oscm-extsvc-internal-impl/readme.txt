@@ -1,1 +1,0 @@
-This projects contains implementation of remote interfaces that are used by the BES API.

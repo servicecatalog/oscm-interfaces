@@ -1,1 +1,0 @@
-This is the generic build system for ADM UM projects based on Apache Ant 1.7.

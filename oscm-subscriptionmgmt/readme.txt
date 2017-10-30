@@ -1,1 +1,0 @@
-The service implementation of the subscription management component.

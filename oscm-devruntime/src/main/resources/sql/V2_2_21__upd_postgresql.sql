@@ -1,1 +1,0 @@
-ALTER TABLE "billingresult" ADD COLUMN "netamount" numeric(19,2);
