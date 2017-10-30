@@ -1,1 +1,0 @@
-The jms queue handling implementation of the task queue.

@@ -1,1 +1,0 @@
-The internal interface of the subscription management component.

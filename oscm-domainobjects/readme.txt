@@ -1,1 +1,0 @@
-The domain objects' implementation.

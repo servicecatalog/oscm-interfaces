@@ -1,1 +1,0 @@
-The project contains utility classes to obtain web service clients for a certain WSDL.

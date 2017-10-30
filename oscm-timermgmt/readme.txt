@@ -1,1 +1,0 @@
-The service implementation of the timer management component.

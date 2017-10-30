@@ -1,1 +1,0 @@
-The service implementation of the payment processing component.

@@ -1,1 +1,0 @@
-The service implementation of the event management component.

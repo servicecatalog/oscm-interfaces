@@ -1,1 +1,0 @@
-The service implementation of the component to handle the VAT-related tasks.
