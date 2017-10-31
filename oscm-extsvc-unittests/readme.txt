@@ -1,1 +1,0 @@
-The tests for exceptions and VOs of the extsvc project.
