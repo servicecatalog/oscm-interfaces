@@ -6,7 +6,7 @@
 
   <groupId>org.oscm</groupId>
   <artifactId>oscm-external-interfaces</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -16,6 +16,7 @@
     <module>oscm-extsvc</module>
     <module>oscm-extsvc-notification</module>
     <module>oscm-app-extsvc</module>
+    <module>oscm-psp-extsvc</module>
   </modules>
 
   <dependencyManagement>
