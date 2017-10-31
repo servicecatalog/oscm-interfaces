@@ -18,4 +18,27 @@
       <artifactId>commons-lang3</artifactId>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-java2ws-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>generate-ProvisioningService</id>
+            <phase>process-classes</phase>
+            <configuration>
+              <className>org.oscm.provisioning.intf.ProvisioningService</className>
+              <genWsdl>true</genWsdl>
+              <verbose>true</verbose>
+              <argline>-createxsdimports</argline>
+            </configuration>
+            <goals>
+              <goal>java2ws</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

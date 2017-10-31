@@ -41,6 +41,9 @@ public class ProvisioningSettings extends ControllerSettings
     private ServiceUser requestingUser;
     private String serviceAccessInfo;
 
+    public ProvisioningSettings() {
+    }
+
     /**
      * Constructs a new provisioning settings instance with the given service
      * parameters and controller configuration settings. The specified locale is

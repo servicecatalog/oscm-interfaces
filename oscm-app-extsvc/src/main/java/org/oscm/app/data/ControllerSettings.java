@@ -18,6 +18,9 @@ import java.util.HashMap;
  */
 public class ControllerSettings implements Serializable {
 
+    public ControllerSettings() {
+    }
+
     public ControllerSettings(HashMap<String, Setting> configSettings) {
         this.configSettings = configSettings;
     }

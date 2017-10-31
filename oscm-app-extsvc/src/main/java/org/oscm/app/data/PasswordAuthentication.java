@@ -21,6 +21,9 @@ public class PasswordAuthentication implements Serializable {
     private String userName;
     private String password;
 
+    public PasswordAuthentication() {
+    }
+
     /**
      * Creates a new <code>PasswordAuthentication</code> object.
      * 

@@ -41,6 +41,9 @@ public class Setting implements Serializable {
      */
     private String controllerId;
 
+    public Setting() {
+    }
+
     /**
      * Constructs a Setting object with all properties specified.
      * 

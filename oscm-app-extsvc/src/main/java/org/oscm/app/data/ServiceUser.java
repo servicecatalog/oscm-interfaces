@@ -31,6 +31,9 @@ public class ServiceUser implements Serializable {
 
     private String locale;
 
+    public ServiceUser() {
+    }
+
     /**
      * Retrieves the ID generated and used by the application to identify the
      * user.
