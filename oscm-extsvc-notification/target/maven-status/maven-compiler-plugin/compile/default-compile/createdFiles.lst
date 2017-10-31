@@ -1,0 +1,5 @@
+org\oscm\notification\intf\NotificationService.class
+org\oscm\notification\vo\package-info.class
+internal\NotificationServiceImpl.class
+org\oscm\notification\vo\VOProperty.class
+org\oscm\notification\vo\VONotification.class
