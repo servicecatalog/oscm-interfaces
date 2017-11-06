@@ -1,18 +1,19 @@
+[![Build Status](https://travis-ci.org/servicecatalog/oscm-external-interfaces.svg?branch=master)](https://travis-ci.org/servicecatalog/oscm-external-interfaces)
 # oscm-external-interfaces
 This repository contains interfaces for integrating your applications with 
 [Open Service Catalog Manager](https://github.com/servicecatalog/oscm#open-service-catalog-manager).
 
-**REST APIs**
 
+**REST APIs**
  * Most needed OSCM Platform functionality is exposed with REST APIs. 
 Find them [here](https://github.com/servicecatalog/oscm-rest-api).
 	
-**APIs exposed with SOAP**
- * oscm-extsvc - OSCM Platform Service API
- * oscm-extsvc-notification - Notification Service API
- * oscm-extsvc-operation - Operation Service API
- * oscm-extsvc-provisioning - Provisioning Service API
-
+**Web Service API**
+ * oscm-extsvc - OSCM Platform Service API (inbound)
+ * oscm-extsvc-provisioning - Provisioning Service API (outbound)
+ * oscm-extsvc-notification - Notification Service API (outbound)
+ * oscm-extsvc-operation - Operation Service API (outbound)
+ 
 **IaaS Provisioning Proxy**  
  * oscm-app-extsvc - Java API for implementing cloud adapter
   
@@ -25,7 +26,7 @@ For integrating with your project simply (TODO) ... https://jitpack.io/#jitpack/
 
 All binares and javadoc (TODO) can be downloaded [here](https://github.com/servicecatalog/oscm-external-interfaces/releases/tag/1.0). 
 
-## Developer documentation
+## Documentation
 Detailed documentation describing the public OSCM Web services and application programming interfaces and how to integrate applications and external systems with OSCM can be found in the OSCM Developer Guide (*Link to developer guide*).
 
 
