@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/servicecatalog/oscm-external-interfaces.svg?branch=master)](https://travis-ci.org/servicecatalog/oscm-external-interfaces)
-# oscm-external-interfaces
+[![Build Status](https://travis-ci.org/servicecatalog/oscm-interfaces.svg?branch=master)](https://travis-ci.org/servicecatalog/oscm-interfaces)
+# oscm-interfaces
 This repository contains interfaces for integrating your applications with 
 [Open Service Catalog Manager](https://github.com/servicecatalog/oscm#open-service-catalog-manager).
 
@@ -24,7 +24,7 @@ Find them [here](https://github.com/servicecatalog/oscm-rest-api).
 
 For integrating with your project simply (TODO) ... https://jitpack.io/#jitpack/maven-simple
 
-All binares and javadoc (TODO) can be downloaded [here](https://github.com/servicecatalog/oscm-external-interfaces/releases/tag/1.0). 
+All binares and javadoc (TODO) can be downloaded [here](https://github.com/servicecatalog/oscm-interfaces/releases/tag/1.0). 
 
 ## Documentation
 Detailed documentation describing the public OSCM Web services and application programming interfaces and how to integrate applications and external systems with OSCM can be found in the OSCM Developer Guide (*Link to developer guide*).
