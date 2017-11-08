@@ -27,7 +27,7 @@ import org.oscm.app.data.LocalizedText;
  */
 public class Messages {
 
-    private static final String BUNDLE_NAME = "org.oscm.app.v2_0.i18n.messages";
+    private static final String BUNDLE_NAME = "org.oscm.app.i18n.messages";
 
     public static final String DEFAULT_LOCALE = "en";
 
