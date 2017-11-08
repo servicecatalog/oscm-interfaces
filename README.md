@@ -22,9 +22,24 @@ Find them [here](https://github.com/servicecatalog/oscm-rest-api).
 
 ## How to use ##
 
-For integrating with your project simply (TODO) ... https://jitpack.io/#jitpack/maven-simple
+For integrating with your project simply include them in your Maven pom. 
 
-All binares and javadoc (TODO) can be downloaded [here](https://github.com/servicecatalog/oscm-interfaces/releases/tag/1.0). 
+Example:
+```
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
+<dependency>
+  <groupId>com.github.servicecatalog.oscm-interfaces</groupId>
+  <artifactId>oscm-extsvc-provisioning</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+All binaries and javadoc (TODO) as well as Web Service description (WSDL+XSD) can be downloaded [here](https://github.com/servicecatalog/oscm-interfaces/releases/tag/1.0). 
 
 ## Documentation
 Detailed documentation describing the public OSCM Web services and application programming interfaces and how to integrate applications and external systems with OSCM can be found in the OSCM Developer Guide (*Link to developer guide*).
