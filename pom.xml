@@ -17,6 +17,7 @@
     <module>oscm-extsvc-notification</module>
     <module>oscm-app-extsvc</module>
     <module>oscm-psp-extsvc</module>
+    <module>oscm-billing-external-interfaces</module>
   </modules>
 
   <dependencyManagement>
