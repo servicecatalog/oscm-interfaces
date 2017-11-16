@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/servicecatalog/oscm-interfaces.svg?branch=master)](https://travis-ci.org/servicecatalog/oscm-interfaces)
+[![artifacts](https://jitpack.io/v/servicecatalog/oscm-interfaces.svg)](https://jitpack.io/#servicecatalog/oscm-interfaces)
 # oscm-interfaces
 This repository contains interfaces for integrating your applications with 
 [Open Service Catalog Manager](https://github.com/servicecatalog/oscm#open-service-catalog-manager).
