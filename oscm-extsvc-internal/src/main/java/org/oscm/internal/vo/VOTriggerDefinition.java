@@ -47,7 +47,7 @@ public class VOTriggerDefinition extends BaseVO {
 
     public void setId(Long id) {
         if (id != null) {
-            setKey(id.longValue());
+            setKey(id);
         } else {
             setKey(0L);
         }
