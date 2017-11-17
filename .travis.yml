@@ -1,5 +1,21 @@
+addons:
+  sonarcloud:
+    organization: servicecatalog
+    token: $SONAR_TOKEN
+  postgresql: "9.4"
+sudo: false
 language: java
 jdk:
   - oraclejdk8
+env:
+  - MVN_GOAL=test
+  - MVN_GOAL=integration-test
+before_install:
+  - git fetch --unshallow --tags
+  - ./db_setup.sh
+install:
+  - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.defaultLogLevel=info mvn install -q -DskipTests=true -Dmaven.javadoc.skip=true -B -P travis
 script:
- - mvn package
+  - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.defaultLogLevel=info mvn org.jacoco:jacoco-maven-plugin:prepare-agent $MVN_GOAL -q -fae -Dmaven.javadoc.skip=true -DfailIfNoTests=false -B -P travis
+after_script:
+  - mvn sonar:sonar
