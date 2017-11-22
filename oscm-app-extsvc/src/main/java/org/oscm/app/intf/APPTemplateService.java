@@ -28,7 +28,7 @@ public interface APPTemplateService {
      * The JNDI name with which the APP template service is registered in the
      * container.
      */
-    String JNDI_NAME = "java:global/oscm-app/oscm-app/APPTemplateServiceBean!org.oscm.app.v2_0.intf.APPTemplateService";
+    String JNDI_NAME = "java:global/oscm-app/oscm-app/APPTemplateServiceBean!org.oscm.app.intf.APPTemplateService";
 
     /**
      * Saves the template with the given name and content for the controller.
