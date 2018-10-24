@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="oscm-app-extsvc/src/main/java"/>
+	<classpathentry kind="src" path="oscm-billing-external-interfaces/src/main/java"/>
+	<classpathentry kind="src" path="oscm-extsvc-internal/src/main/java"/>
+	<classpathentry kind="src" path="oscm-extsvc-notification/src/main/java"/>
+	<classpathentry kind="src" path="oscm-extsvc-operation/src/main/java"/>
+	<classpathentry kind="src" path="oscm-extsvc-provisioning/src/main/java"/>
+	<classpathentry kind="src" path="oscm-extsvc/src/main/java"/>
+	<classpathentry kind="src" path="oscm-psp-extsvc/src/main/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
