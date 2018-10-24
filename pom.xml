@@ -19,7 +19,7 @@
     <module>oscm-psp-extsvc</module>
     <module>oscm-billing-external-interfaces</module>
   </modules>
-
+ 
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -90,4 +90,10 @@
       </plugins>
     </pluginManagement>
   </build>
+   <repositories>
+   <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
 </project>
