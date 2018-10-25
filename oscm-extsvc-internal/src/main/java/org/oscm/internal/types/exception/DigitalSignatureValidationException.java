@@ -76,8 +76,8 @@ public class DigitalSignatureValidationException extends
      *            the detail message
      * @param reason
      *            the reason
-     * @param params
-     *            the message parameters
+     * @param cause
+     *            the causing error
      */
     public DigitalSignatureValidationException(String message,
             ReasonEnum reason, Throwable cause) {

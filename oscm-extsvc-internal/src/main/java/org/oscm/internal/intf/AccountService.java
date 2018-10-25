@@ -235,10 +235,10 @@ public interface AccountService {
 
     public VOOrganization registerKnownCustomer(VOOrganization organization,
             VOUserDetails user, LdapProperties organizationProperties,
-            String marketplaceId) throws OrganizationAuthoritiesException,
-            ValidationException, NonUniqueBusinessKeyException,
-            MailOperationException, ObjectNotFoundException,
-            OperationPendingException;
+            String marketplaceId)
+            throws OrganizationAuthoritiesException, ValidationException,
+            NonUniqueBusinessKeyException, MailOperationException,
+            ObjectNotFoundException, OperationPendingException;
 
     /**
      * Updates the data of the organization to which the calling user belongs,
@@ -295,9 +295,9 @@ public interface AccountService {
 
     public void updateAccountInformation(VOOrganization organization,
             VOUserDetails user, String marketplaceId,
-            VOImageResource imageResource) throws ValidationException,
-            NonUniqueBusinessKeyException, OperationNotPermittedException,
-            TechnicalServiceNotAliveException,
+            VOImageResource imageResource)
+            throws ValidationException, NonUniqueBusinessKeyException,
+            OperationNotPermittedException, TechnicalServiceNotAliveException,
             TechnicalServiceOperationException, ObjectNotFoundException,
             DistinguishedNameException, ConcurrentModificationException,
             ImageException;
@@ -318,6 +318,9 @@ public interface AccountService {
     public List<VOOrganization> getMyCustomers()
             throws OrganizationAuthoritiesException;
 
+    public List<VOOrganization> getMyCustomersOptimization()
+            throws OrganizationAuthoritiesException;
+
     /**
      * Returns the suppliers who are authorized to offer marketable services
      * based on the specified technical service.
@@ -334,10 +337,6 @@ public interface AccountService {
      * @throws ObjectNotFoundException
      *             if the technical service is not found
      */
-
-    public List<VOOrganization> getMyCustomersOptimization()
-            throws OrganizationAuthoritiesException;
-
     public List<VOOrganization> getSuppliersForTechnicalService(
             VOTechnicalService technicalService)
             throws ObjectNotFoundException, OperationNotPermittedException;
@@ -483,8 +482,8 @@ public interface AccountService {
      */
 
     public Set<VOPaymentType> getAvailablePaymentTypesFromOrganization(
-            Long serviceKey) throws OrganizationAuthoritiesException,
-            ObjectNotFoundException;
+            Long serviceKey)
+            throws OrganizationAuthoritiesException, ObjectNotFoundException;
 
     /**
      * Retrieves the billing contacts of the calling user's organization.
@@ -738,11 +737,11 @@ public interface AccountService {
      * @throws ObjectNotFoundException
      *             if the target object is not found
      */
-
+    
     public List<VOUda> getUdas(String targetType, long targetObjectKey,
-            boolean checkSeller) throws ValidationException,
-            OrganizationAuthoritiesException, ObjectNotFoundException,
-            OperationNotPermittedException;
+            boolean checkSeller)
+            throws ValidationException, OrganizationAuthoritiesException,
+            ObjectNotFoundException, OperationNotPermittedException;
 
     /**
      * Saves the specified list of custom attributes. For each attribute in the
@@ -778,7 +777,7 @@ public interface AccountService {
      *             required for handling custom attributes with the specified
      *             target type
      */
-
+    
     public void saveUdas(List<VOUda> udas) throws ValidationException,
             ObjectNotFoundException, OperationNotPermittedException,
             ConcurrentModificationException, NonUniqueBusinessKeyException,
@@ -834,8 +833,8 @@ public interface AccountService {
      *             if the organization is not found.
      */
 
-    public VOOrganization getMyCustomer(VOOrganization org, String locale)
-            throws ObjectNotFoundException;
+    public VOOrganization getMyCustomer(VOOrganization organization,
+            String locale) throws ObjectNotFoundException;
 
     /**
      * Deletes the specified payment information for the calling user's

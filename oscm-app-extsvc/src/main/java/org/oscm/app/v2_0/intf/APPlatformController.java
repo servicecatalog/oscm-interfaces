@@ -48,7 +48,7 @@ import org.oscm.app.v2_0.exceptions.APPlatformException;
  * report their completion via the APP notification handler. The controller is
  * responsible for providing the correct URL of the handler in this case. The
  * URL has the following format:<br>
- * <code><i>base_url</i>?sid=<i>instance_id</i>&cid=<i>controller_id</i>[&<i>options</i>]</code>
+ * <code><i>base_url</i>?sid=<i>instance_id</i>&amp;controllerId=<i>controller_id</i>[&amp;<i>options</i>]</code>
  * <br>
  * <code><i>base_url</i></code> is the basic URL of the APP notification handler
  * as provided by the <code>getEventServiceUrl</code> method of
@@ -59,7 +59,7 @@ import org.oscm.app.v2_0.exceptions.APPlatformException;
  * <code><i>options</i></code> are optional commands or parameters to be passed
  * to the controller.<br>
  * Example:<br>
- * <code>127.0.0.1:8080/oscm-app/notify?sid=vm2041&cid=ess.vmware&command=finish</code>
+ * <code>127.0.0.1:8080/oscm-app/notify?sid=vm2041&amp;controllerId=ess.vmware&amp;command=finish</code>
  * <p>
  * In addition to provisioning operations for subscriptions, a service
  * controller can execute service operations. Service operations access the
@@ -490,7 +490,7 @@ public interface APPlatformController {
      * @param settings
      *            a <code>ProvisioningSettings</code> object specifying the
      *            service parameters and configuration settings
-     * @return <code>true</true> if usage data was fetched and handled
+     * @return <code>true</code> if usage data was fetched and handled
      *         successfully
      * @throws APPlatformException
      */

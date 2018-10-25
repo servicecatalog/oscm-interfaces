@@ -49,7 +49,8 @@ public interface IdentityService {
      * <br>
      * 
      * User ID (mandatory), Email (mandatory), Language, Locale (mandatory),
-     * Title ("MR" or "MS"), First name, Last name, One or several user roles<br>
+     * Title ("MR" or "MS"), First name, Last name, One or several user
+     * roles<br>
      * <br>
      * 
      * As first and last name may contain a comma and multiple roles are also
@@ -59,7 +60,8 @@ public interface IdentityService {
      * quotes.<br>
      * <br>
      * 
-     * Sample for users to be imported to a technology provider organization:<br>
+     * Sample for users to be imported to a technology provider
+     * organization:<br>
      * <br>
      * 
      * "user1,user1@org.com,en,MR,"John","Doe","ORGANIZATION_ADMIN,
@@ -69,18 +71,12 @@ public interface IdentityService {
      * 
      * @param csvData
      *            comma separated text in UTF-8 encoding
-     * @param organizationId
-     *            the organization of the users to be imported. Null if the
-     *            organization of the current user is to be used.
      * @param marketplaceId
      *            The marketplace to be included in the user registration mail
      * @throws BulkUserImportException
      *             if the given CSV data have syntax errors
      * @throws ObjectNotFoundException
      *             if the given organization or marketplace does not exist
-     * @throws OperationNotPermittedException
-     *             if the current user is not PLATFORM_OPERATOR and tries to
-     *             import users to external organization
      * @throws IllegalArgumentException
      */
     public void importUsersInOwnOrganization(byte[] csvData,
@@ -95,7 +91,8 @@ public interface IdentityService {
      * <br>
      * 
      * User ID (mandatory), Email (mandatory), Language, Locale (mandatory),
-     * Title ("MR" or "MS"), First name, Last name, One or several user roles<br>
+     * Title ("MR" or "MS"), First name, Last name, One or several user
+     * roles<br>
      * <br>
      * 
      * As first and last name may contain a comma and multiple roles are also
@@ -105,7 +102,8 @@ public interface IdentityService {
      * quotes.<br>
      * <br>
      * 
-     * Sample for users to be imported to a technology provider organization:<br>
+     * Sample for users to be imported to a technology provider
+     * organization:<br>
      * <br>
      * 
      * "user1,user1@org.com,en,MR,"John","Doe","ORGANIZATION_ADMIN,
@@ -124,9 +122,6 @@ public interface IdentityService {
      *             if the given CSV data have syntax errors
      * @throws ObjectNotFoundException
      *             if the given organization or marketplace does not exist
-     * @throws OperationNotPermittedException
-     *             if the current user is not PLATFORM_OPERATOR and tries to
-     *             import users to external organization
      * @throws IllegalArgumentException
      */
     public void importUsers(byte[] csvData, String organizationId,
@@ -417,9 +412,9 @@ public interface IdentityService {
      */
 
     public void revokeUserRoles(VOUser user, List<UserRoleType> roles)
-            throws ObjectNotFoundException,
-            UserModificationConstraintException, UserActiveException,
-            OperationNotPermittedException, UserRoleAssignmentException;
+            throws ObjectNotFoundException, UserModificationConstraintException,
+            UserActiveException, OperationNotPermittedException,
+            UserRoleAssignmentException;
 
     /**
      * Retrieves the users that are registered for the calling user's
@@ -798,13 +793,15 @@ public interface IdentityService {
 
     /**
      * Assigns the given role to the specified user. If the user already has
-     * this role or the given role is not related to administrator's units, the method has no effect.
+     * this role or the given role is not related to administrator's units, the
+     * method has no effect.
      * <p>
-     * Required role: administrator of the user's organization or unit administrator
+     * Required role: administrator of the user's organization or unit
+     * administrator
      * 
      * @param user
-     *            the value object specifying the user to whom the role is to
-     *            be assigned
+     *            the value object specifying the user to whom the role is to be
+     *            assigned
      * @param role
      *            the role to be set
      * @throws ObjectNotFoundException
@@ -818,9 +815,11 @@ public interface IdentityService {
 
     /**
      * Removes the given role from the specified user. If the user already has
-     * this role or the given role is not related to administrator's units, the method has no effect.
+     * this role or the given role is not related to administrator's units, the
+     * method has no effect.
      * <p>
-     * Required role: administrator of the user's organization or unit administrator
+     * Required role: administrator of the user's organization or unit
+     * administrator
      * 
      * @param user
      *            the value object specifying the user from which the roles are

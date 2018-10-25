@@ -633,8 +633,6 @@ public interface AccountService {
      * @throws ConcurrentModificationException
      *             if the stored discount information is changed by another user
      *             in the time between reading and writing it
-     * @throws EJBException
-     *             if the calling user does not have the service manager role
      */
     @WebMethod
     public VOOrganization updateCustomerDiscount(
@@ -733,8 +731,7 @@ public interface AccountService {
      *             if the target object is not found
      */
     @WebMethod
-    public List<VOUda> getUdas(
-            @WebParam(name = "targetType") String targetType,
+    public List<VOUda> getUdas(@WebParam(name = "targetType") String targetType,
             @WebParam(name = "targetObjectKey") long targetObjectKey)
             throws ValidationException, OrganizationAuthoritiesException,
             ObjectNotFoundException, OperationNotPermittedException;
