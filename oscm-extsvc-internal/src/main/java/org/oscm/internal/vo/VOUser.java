@@ -153,7 +153,8 @@ public class VOUser extends BaseVO {
      * @param organizationRoles
      *            the organization roles
      */
-    public void setOrganizationRoles(Set<OrganizationRoleType> organizationRoles) {
+    public void setOrganizationRoles(
+            Set<OrganizationRoleType> organizationRoles) {
         this.organizationRoles = organizationRoles;
     }
 
@@ -178,7 +179,9 @@ public class VOUser extends BaseVO {
 
     /**
      * Sets tenant to which user belongs
-     * @return
+     * 
+     * @param tenantKey
+     *            the key of the tenant
      */
     public void setTenantKey(String tenantKey) {
         this.tenantKey = tenantKey;
@@ -186,7 +189,8 @@ public class VOUser extends BaseVO {
 
     /**
      * Gets tenant to which user belongs
-     * @return
+     * 
+     * @return key of the tenant
      */
     public String getTenantKey() {
         return tenantKey;
@@ -194,6 +198,7 @@ public class VOUser extends BaseVO {
 
     /**
      * Sets tenantID to which user belongs
+     * 
      * @param tenantId
      */
     public void setTenantId(String tenantId) {
@@ -202,6 +207,8 @@ public class VOUser extends BaseVO {
 
     /**
      * Returns tenantID to which user belongs
+     * 
+     * @return tenantID to which user belongs
      */
     public String getTenantId() {
         return tenantId;

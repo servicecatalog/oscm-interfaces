@@ -92,7 +92,9 @@ public class InstanceStatus implements Serializable {
      * completion via the APP notification handler. The controller is
      * responsible for providing the correct URL of the handler in this case.
      * The URL has the following format:<br>
-     * <code><i>base_url</i>?sid=<i>instance_id</i>&cid=<i>controller_id</i>[&<i>options</i>]</code>
+     * <code>
+     * <i>base_url</i>?sid=<i>instance_id</i>&amp;controllerId=<i>controller_id</i>[&amp;<i>options</i>]
+     * </code>
      * <br>
      * <code><i>base_url</i></code> is the basic URL of the APP notification
      * handler as provided by the <code>getEventServiceUrl</code> method of
@@ -103,7 +105,7 @@ public class InstanceStatus implements Serializable {
      * <code><i>options</i></code> are optional commands or parameters to be
      * passed to the controller.<br>
      * Example:<br>
-     * <code>127.0.0.1:8080/oscm-app/notify?sid=vm2041&cid=ess.vmware&command=finish</code>
+     * <code>127.0.0.1:8080/oscm-app/notify?sid=vm2041&amp;controllerId=ess.vmware&amp;command=finish</code>
      * 
      * @param runWithTimer
      *            <code>true</code> if the instance status is to be polled,

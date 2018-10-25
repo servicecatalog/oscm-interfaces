@@ -76,8 +76,8 @@ public interface TriggerDefinitionService {
      * Required role: administrator of the organization that owns the trigger
      * definition, or operator of the platform operator organization
      * 
-     * @param triggerKey
-     *            the numeric key of the trigger definition to delete
+     * @param triggerDefinition
+     *            the VO representing the trigger definition to delete
      * @throws ObjectNotFoundException
      *             if the trigger definition is not found
      * @throws DeletionConstraintException
@@ -137,6 +137,9 @@ public interface TriggerDefinitionService {
      * <p>
      * Required role: administrator of the organization, or operator of the
      * platform operator organization
+     * 
+     * @param id
+     *            the id of the trigger definition
      * 
      * @throws ObjectNotFoundException
      *             if the trigger definition is not found

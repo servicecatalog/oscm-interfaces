@@ -25,9 +25,9 @@ public class BulkUserImportException extends SaaSApplicationException {
      * 
      * @param reason
      *            the reason
-     * @param e
+     * @param cause
      *            the cause
-     * @param line
+     * @param lineNumber
      *            the line on which the file parsing failed
      */
     public BulkUserImportException(Reason reason, Exception cause,
@@ -68,8 +68,8 @@ public class BulkUserImportException extends SaaSApplicationException {
      * @param message
      *            the detail message
      */
-    public BulkUserImportException(String msg) {
-        super(msg);
+    public BulkUserImportException(String message) {
+        super(message);
     }
 
     /**
@@ -81,8 +81,8 @@ public class BulkUserImportException extends SaaSApplicationException {
      * @param bean
      *            the bean for JAX-WS exception serialization
      */
-    public BulkUserImportException(String msg, BulkUserImportExceptionBean bean) {
-        super(msg, bean);
+    public BulkUserImportException(String message, BulkUserImportExceptionBean bean) {
+        super(message, bean);
         this.bean = bean;
     }
 
@@ -97,9 +97,9 @@ public class BulkUserImportException extends SaaSApplicationException {
      * @param cause
      *            the cause
      */
-    public BulkUserImportException(String msg,
+    public BulkUserImportException(String message,
             BulkUserImportExceptionBean bean, Throwable cause) {
-        super(msg, bean, cause);
+        super(message, bean, cause);
         this.bean = bean;
     }
 

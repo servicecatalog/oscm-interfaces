@@ -64,8 +64,8 @@ public class AssertionValidationException extends SaaSApplicationException {
      *            the detail message
      * @param reason
      *            the reason
-     * @param params
-     *            the message parameters
+     * @param cause
+     *            the causing error
      */
     public AssertionValidationException(String message, ReasonEnum reason,
             Throwable cause) {

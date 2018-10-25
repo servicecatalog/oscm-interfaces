@@ -561,8 +561,8 @@ public class VOService extends BaseVO {
      * service, otherwise <code>false</code>. If it's enabled, the subscribing
      * user will be automatically assigned to the created subscription.
      * 
-     * </br> This method is redundant to {@link #isAutoAssignUserEnabled()}, but
-     * is required by the {@link org.oscm.converter.XMLSerializer}.
+     * <br> This method is redundant to {@link #isAutoAssignUserEnabled()}, but
+     * is required by the <code>org.oscm.converter.XMLSerializer</code> (oscm-commons).
      * Otherwise the attribute is not persisted in the trigger process.
      * 
      * @return if auto assignment is enabled

@@ -779,7 +779,7 @@ public interface IdentityService {
             throws BulkUserImportException, ObjectNotFoundException;
 
     /**
-     * @deprecated Replaced by {@link #addRevokeUserUnitAssignment()}.
+     * @deprecated Replaced by {@link #addRevokeUserUnitAssignment(String, List, List)}.
      */
     @WebMethod
     @Deprecated
