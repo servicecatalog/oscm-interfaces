@@ -40,8 +40,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */
@@ -60,8 +58,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */
@@ -78,8 +74,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */
@@ -98,8 +92,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */

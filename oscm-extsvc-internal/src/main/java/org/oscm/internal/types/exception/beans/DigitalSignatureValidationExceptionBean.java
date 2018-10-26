@@ -16,7 +16,7 @@ import org.oscm.internal.types.exception.DigitalSignatureValidationException.Rea
 
 /**
  * Bean for JAX-WS exception serialization, specific for
- * {@link DigitalSignatureValidationException}.
+ * {@link org.oscm.internal.types.exception.DigitalSignatureValidationException}.
  */
 @XmlRootElement(name = "DigitalSignatureValidationExceptionBean")
 @XmlAccessorType(XmlAccessType.PROPERTY)

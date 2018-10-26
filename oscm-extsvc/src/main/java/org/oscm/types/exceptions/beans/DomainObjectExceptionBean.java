@@ -12,12 +12,11 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.oscm.types.exceptions.DomainObjectException;
 import org.oscm.types.exceptions.DomainObjectException.ClassEnum;
 
 /**
  * Bean for JAX-WS exception serialization, specific for
- * {@link DomainObjectException}.
+ * {@link org.oscm.types.exceptions.DomainObjectException}.
  * 
  */
 @XmlRootElement(name = "DomainObjectExceptionBean")

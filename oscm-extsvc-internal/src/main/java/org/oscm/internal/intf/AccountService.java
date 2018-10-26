@@ -635,8 +635,6 @@ public interface AccountService {
      * @throws ConcurrentModificationException
      *             if the stored discount information is changed by another user
      *             in the time between reading and writing it
-     * @throws EJBException
-     *             if the calling user does not have the service manager role
      */
 
     public VOOrganization updateCustomerDiscount(VOOrganization organization)

@@ -16,7 +16,7 @@ import org.oscm.types.exceptions.DomainObjectException.ClassEnum;
 
 /**
  * Bean for JAX-WS exception serialization, specific for
- * {@link DeletionConstraintException}.
+ * {@link org.oscm.types.exceptions.DeletionConstraintException}.
  * 
  */
 @XmlRootElement(name = "DeletionConstraintExceptionBean")
