@@ -2,7 +2,7 @@
  *                                                                              
  *  Copyright FUJITSU LIMITED 2018
  *                                                                                                                                 
- *  Creation Date: Mar 31, 2017                                                      
+ *  Creation Date: Mar 31, 2018                                                      
  *                                                                              
  *******************************************************************************/
 
@@ -15,7 +15,6 @@ import javax.ejb.Remote;
 import org.oscm.app.v2_0.data.PasswordAuthentication;
 import org.oscm.app.v2_0.data.Template;
 import org.oscm.app.v2_0.exceptions.APPlatformException;
-import org.oscm.app.v2_0.exceptions.AuthenticationException;
 
 /**
  * Interface providing methods by which service controllers implemented in APP
@@ -41,8 +40,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */
@@ -61,8 +58,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */
@@ -79,8 +74,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */
@@ -99,8 +92,6 @@ public interface APPTemplateService {
      *            a <code>PasswordAuthentication</code> object identifying a
      *            technology manager registered in the organization which is
      *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
      * @throws APPlatformException
      *             if a general problem occurs in accessing APP
      */

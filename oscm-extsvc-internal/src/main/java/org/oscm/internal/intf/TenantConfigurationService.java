@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *
  *******************************************************************************/
 package org.oscm.internal.intf;
@@ -11,7 +11,7 @@ import javax.ejb.Remote;
  * Remote interface providing the functionality to retrieve and manipulate
  * configuration settings of tenants.
  *
- * @author PLGrubskiM on 2017-07-03.
+ * @author PLGrubskiM on 2018-07-03.
  *
  */
 @Remote

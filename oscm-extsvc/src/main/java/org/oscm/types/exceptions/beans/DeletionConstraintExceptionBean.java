@@ -1,6 +1,6 @@
 /*******************************************************************************
  *                                                                              
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *       
  *  Creation Date: 2010-12-16                                                      
  *                                                                              
@@ -12,12 +12,11 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.oscm.types.exceptions.DeletionConstraintException;
 import org.oscm.types.exceptions.DomainObjectException.ClassEnum;
 
 /**
  * Bean for JAX-WS exception serialization, specific for
- * {@link DeletionConstraintException}.
+ * {@link org.oscm.types.exceptions.DeletionConstraintException}.
  * 
  */
 @XmlRootElement(name = "DeletionConstraintExceptionBean")

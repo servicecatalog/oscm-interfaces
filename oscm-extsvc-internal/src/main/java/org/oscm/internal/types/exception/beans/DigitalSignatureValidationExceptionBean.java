@@ -1,6 +1,6 @@
 /*******************************************************************************
  *                                                                              
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *       
  *  Creation Date: 2012-02-27                                                      
  *                                                                              
@@ -12,12 +12,11 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.oscm.internal.types.exception.DigitalSignatureValidationException;
 import org.oscm.internal.types.exception.DigitalSignatureValidationException.ReasonEnum;
 
 /**
  * Bean for JAX-WS exception serialization, specific for
- * {@link DigitalSignatureValidationException}.
+ * {@link org.oscm.internal.types.exception.DigitalSignatureValidationException}.
  */
 @XmlRootElement(name = "DigitalSignatureValidationExceptionBean")
 @XmlAccessorType(XmlAccessType.PROPERTY)

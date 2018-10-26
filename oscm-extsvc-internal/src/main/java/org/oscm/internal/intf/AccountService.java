@@ -1,6 +1,6 @@
 /*******************************************************************************
  *                                                                              
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *       
  *  Creation Date: 2009-02-05                                                       
  *                                                                              
@@ -11,7 +11,6 @@ package org.oscm.internal.intf;
 import java.util.List;
 import java.util.Set;
 
-import javax.ejb.EJBException;
 import javax.ejb.Remote;
 
 import org.oscm.internal.types.enumtypes.PerformanceHint;
@@ -636,8 +635,6 @@ public interface AccountService {
      * @throws ConcurrentModificationException
      *             if the stored discount information is changed by another user
      *             in the time between reading and writing it
-     * @throws EJBException
-     *             if the calling user does not have the service manager role
      */
 
     public VOOrganization updateCustomerDiscount(VOOrganization organization)

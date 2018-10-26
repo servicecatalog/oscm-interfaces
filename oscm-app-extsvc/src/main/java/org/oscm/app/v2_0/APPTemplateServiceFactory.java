@@ -20,7 +20,7 @@ import java.util.Properties;
 import static org.oscm.app.v2_0.intf.APPTemplateService.JNDI_NAME;
 
 /**
- * Created by BadziakP on 2017-09-19.
+ * Created by BadziakP on 2018-09-19.
  */
 public class APPTemplateServiceFactory {
 

@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *
  *******************************************************************************/
 package org.oscm.internal.types.enumtypes;
@@ -8,7 +8,7 @@ package org.oscm.internal.types.enumtypes;
 /**
  * Contains supported hashing algorithms used in SAML communication
  *
- * Created by PLGrubskiM on 2017-07-17.
+ * Created by PLGrubskiM on 2018-07-17.
  */
 public enum SigningAlgorithmType {
 
