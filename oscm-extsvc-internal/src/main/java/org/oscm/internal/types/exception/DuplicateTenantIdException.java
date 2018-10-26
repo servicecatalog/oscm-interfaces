@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *
  *  Creation Date: 2016-10-21
  *
@@ -10,6 +10,12 @@ package org.oscm.internal.types.exception;
 import org.oscm.internal.types.exception.beans.ApplicationExceptionBean;
 
 public class DuplicateTenantIdException extends SaaSApplicationException {
+   
+
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -7887213645082595553L;
 
     /**
      * Constructs a new exception with <code>null</code> as its detail message.

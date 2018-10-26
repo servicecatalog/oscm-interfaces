@@ -1,12 +1,12 @@
 /*******************************************************************************
  *
- *  Copyright FUJITSU LIMITED 2017
+ *  Copyright FUJITSU LIMITED 2018
  *
  ******************************************************************************/
 package org.oscm.internal.types.exception;
 
 /**
- * Created by PLGrubskiM on 2017-07-21.
+ * Created by PLGrubskiM on 2018-07-21.
  */
 public class MarketplaceValidationException extends SaaSApplicationException{
 

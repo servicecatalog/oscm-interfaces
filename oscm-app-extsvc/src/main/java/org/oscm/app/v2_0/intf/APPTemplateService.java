@@ -2,7 +2,7 @@
  *                                                                              
  *  Copyright FUJITSU LIMITED 2018
  *                                                                                                                                 
- *  Creation Date: Mar 31, 2017                                                      
+ *  Creation Date: Mar 31, 2018                                                      
  *                                                                              
  *******************************************************************************/
 
@@ -15,7 +15,6 @@ import javax.ejb.Remote;
 import org.oscm.app.v2_0.data.PasswordAuthentication;
 import org.oscm.app.v2_0.data.Template;
 import org.oscm.app.v2_0.exceptions.APPlatformException;
-import org.oscm.app.v2_0.exceptions.AuthenticationException;
 
 /**
  * Interface providing methods by which service controllers implemented in APP
