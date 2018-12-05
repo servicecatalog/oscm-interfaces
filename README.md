@@ -16,11 +16,11 @@ Find them [here](https://github.com/servicecatalog/oscm-rest-api).
  * oscm-extsvc-notification - Notification Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-notification/master-SNAPSHOT/javadoc/)
  * oscm-extsvc-operation - Operation Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-operation/master-SNAPSHOT/javadoc/)
  
-**IaaS Provisioning Proxy**  
- * oscm-app-extsvc - Java API for implementing cloud adapter
+**Provisioning Proxy**  
+ * oscm-app-extsvc - Java API for implementing cloud adapter [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-app-extsvc/master-SNAPSHOT/javadoc/)
   
 **OSCM internal Java API**
- * oscm-extsvc-internal - internal API based on oscm-extsvc
+ * oscm-extsvc-internal - internal API based on oscm-extsvc [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/javadoc/)
 
 ## How to use ##
 
