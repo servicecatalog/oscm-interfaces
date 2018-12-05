@@ -1,12 +1,5 @@
 [![Build Status](https://travis-ci.org/servicecatalog/oscm-interfaces.svg?branch=master)](https://travis-ci.org/servicecatalog/oscm-interfaces)
 [![artifacts](https://jitpack.io/v/servicecatalog/oscm-interfaces.svg)](https://jitpack.io/#servicecatalog/oscm-interfaces)
-[![linesOfCode](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=ncloc)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
-[![coverage](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=coverage)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
-[![bugs](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=bugs)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
-[![vulnerabilities](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=vulnerabilities)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
-[![sqale_debt_ratio](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=sqale_debt_ratio)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
-[![code_smells](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=code_smells)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
-[![duplicated_lines_density](https://sonarcloud.io/api/badges/measure?key=org.oscm:oscm-interfaces&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard/index/org.oscm:oscm-interfaces)
 
 # oscm-interfaces
 This repository contains interfaces for integrating your applications with 
