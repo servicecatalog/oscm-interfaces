@@ -5,11 +5,6 @@
 This repository contains interfaces for integrating your applications with 
 [Open Service Catalog Manager](https://github.com/servicecatalog/oscm#open-service-catalog-manager).
 
-
-**REST APIs**
- * Most needed OSCM Platform functionality is exposed with REST APIs. 
-Find them [here](https://github.com/servicecatalog/oscm-rest-api).
-	
 **Web Service API**
  * oscm-extsvc - OSCM Platform Service API (inbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc/master-SNAPSHOT/javadoc/) [[source code + wsdl files]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc/master-SNAPSHOT/oscm-extsvc-master-SNAPSHOT-sources.jar) 
  * oscm-extsvc-provisioning - Provisioning Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-provisioning/master-SNAPSHOT/javadoc/) [[source code + wsdl files]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-provisioning/master-SNAPSHOT/oscm-extsvc-provisioning-master-SNAPSHOT-sources.jar)  
@@ -21,6 +16,9 @@ Find them [here](https://github.com/servicecatalog/oscm-rest-api).
   
 **OSCM internal Java API**
  * oscm-extsvc-internal - internal API based on oscm-extsvc [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/javadoc/) [[source code]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/oscm-extsvc-internal-master-SNAPSHOT-sources.jar)  
+
+**REST APIs**
+ * In progress. Most needed OSCM Platform functionality is exposed with REST APIs. See [here](https://github.com/servicecatalog/oscm-rest-api). 
 
 ## How to use ##
 
