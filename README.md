@@ -11,16 +11,16 @@ This repository contains interfaces for integrating your applications with
 Find them [here](https://github.com/servicecatalog/oscm-rest-api).
 	
 **Web Service API**
- * oscm-extsvc - OSCM Platform Service API (inbound)
- * oscm-extsvc-provisioning - Provisioning Service API (outbound)
- * oscm-extsvc-notification - Notification Service API (outbound)
- * oscm-extsvc-operation - Operation Service API (outbound)
+ * oscm-extsvc - OSCM Platform Service API (inbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc/master-SNAPSHOT/javadoc/)
+ * oscm-extsvc-provisioning - Provisioning Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-provisioning/master-SNAPSHOT/javadoc/)
+ * oscm-extsvc-notification - Notification Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-notification/master-SNAPSHOT/javadoc/)
+ * oscm-extsvc-operation - Operation Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-operation/master-SNAPSHOT/javadoc/)
  
-**IaaS Provisioning Proxy**  
- * oscm-app-extsvc - Java API for implementing cloud adapter
+**Provisioning Proxy**  
+ * oscm-app-extsvc - Java API for implementing cloud adapter [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-app-extsvc/master-SNAPSHOT/javadoc/)
   
 **OSCM internal Java API**
- * oscm-extsvc-internal - internal API based on oscm-extsvc
+ * oscm-extsvc-internal - internal API based on oscm-extsvc [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/javadoc/)
 
 ## How to use ##
 
@@ -44,7 +44,7 @@ Example:
 All binaries and javadoc (TODO) as well as Web Service description (WSDL+XSD) can be downloaded [here](https://github.com/servicecatalog/oscm-interfaces/releases/tag/1.0). 
 
 ## Documentation
-Detailed documentation describing the public OSCM Web services and application programming interfaces and how to integrate applications and external systems with OSCM can be found in the OSCM Developer Guide (*Link to developer guide*).
+Detailed documentation describing the public OSCM Web services and application programming interfaces and how to integrate applications and external systems with OSCM can be found in the [*OSCM Developer Guide*](https://github.com/servicecatalog/documentation/blob/master/Development/oscm-doc-user/resources/manuals/integration/en/Developer.pdf).
 
 
 
