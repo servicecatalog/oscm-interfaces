@@ -11,16 +11,16 @@ This repository contains interfaces for integrating your applications with
 Find them [here](https://github.com/servicecatalog/oscm-rest-api).
 	
 **Web Service API**
- * oscm-extsvc - OSCM Platform Service API (inbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc/master-SNAPSHOT/javadoc/)
- * oscm-extsvc-provisioning - Provisioning Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-provisioning/master-SNAPSHOT/javadoc/)
- * oscm-extsvc-notification - Notification Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-notification/master-SNAPSHOT/javadoc/)
- * oscm-extsvc-operation - Operation Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-operation/master-SNAPSHOT/javadoc/)
+ * oscm-extsvc - OSCM Platform Service API (inbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc/master-SNAPSHOT/javadoc/) [[source code + wsdl files]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc/master-SNAPSHOT/oscm-extsvc-master-SNAPSHOT-sources.jar/) 
+ * oscm-extsvc-provisioning - Provisioning Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-provisioning/master-SNAPSHOT/javadoc/) [[source code + wsdl files]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-provisioning/master-SNAPSHOT/oscm-extsvc-provisioning-master-SNAPSHOT-sources.jar/)  
+ * oscm-extsvc-notification - Notification Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-notification/master-SNAPSHOT/javadoc/) [[source code + wsdl files]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-notification/master-SNAPSHOT/oscm-extsvc-notification-master-SNAPSHOT-sources.jar/) 
+ * oscm-extsvc-operation - Operation Service API (outbound) [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-operation/master-SNAPSHOT/javadoc/) [[source code + wsdl files]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-operation/master-SNAPSHOT/oscm-extsvc-operation-master-SNAPSHOT-sources.jar/)  
  
 **Provisioning Proxy**  
- * oscm-app-extsvc - Java API for implementing cloud adapter [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-app-extsvc/master-SNAPSHOT/javadoc/)
+ * oscm-app-extsvc - Java API for implementing cloud adapter [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-app-extsvc/master-SNAPSHOT/javadoc/) [[source code]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-app-extsvc/master-SNAPSHOT/oscm-app-extsvc-master-SNAPSHOT-sources.jar/)  
   
 **OSCM internal Java API**
- * oscm-extsvc-internal - internal API based on oscm-extsvc [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/javadoc/)
+ * oscm-extsvc-internal - internal API based on oscm-extsvc [[see javadoc]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/javadoc/) [[source code]](https://jitpack.io/com/github/servicecatalog/oscm-interfaces/oscm-extsvc-internal/master-SNAPSHOT/oscm-extsvc-internal-master-SNAPSHOT-sources.jar/)  
 
 ## How to use ##
 
