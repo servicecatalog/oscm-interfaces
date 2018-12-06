@@ -38,10 +38,10 @@ Example:
 <dependency>
   <groupId>com.github.servicecatalog.oscm-interfaces</groupId>
   <artifactId>oscm-extsvc-provisioning</artifactId>
-  <version>1.0</version>
+  <version>1.4</version>
 </dependency>
 ```
-All binaries and javadoc (TODO) as well as Web Service description (WSDL+XSD) can be downloaded [here](https://github.com/servicecatalog/oscm-interfaces/releases/tag/1.0). 
+All source code and Web Service description (WSDL+XSD) can be downloaded with above links. 
 
 ## Documentation
 Detailed documentation describing the public OSCM Web services and application programming interfaces and how to integrate applications and external systems with OSCM can be found in the [*OSCM Developer Guide*](https://github.com/servicecatalog/documentation/blob/master/Development/oscm-doc-user/resources/manuals/integration/en/Developer.pdf).
