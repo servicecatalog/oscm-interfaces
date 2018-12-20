@@ -21,6 +21,17 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <compilerArgs>
+            <arg>-verbose</arg>
+            <arg>-Xpkginfo:always</arg>
+          </compilerArgs>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-java2ws-plugin</artifactId>
         <executions>
@@ -50,7 +61,7 @@
           </execution>
         </executions>
       </plugin>
-      <plugin> 
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
         <executions>
