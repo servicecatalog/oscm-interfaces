@@ -500,4 +500,27 @@ public interface APPlatformController {
         return false;
     }
 
+    /**
+     * Check connection with configured controller.
+     * Verification is performed by invoking configured endpoints of required services.
+     * Ex. it checks Keystone and Heat connections in case of OpenStack controller.
+     * In error case an APPlatformException with clear message and cause trace is expected.
+     *
+     * @param controllerId
+     *              - the ID of the controller
+     * @return <code>true</code> if it is able to connect with service's instance
+     * @throws APPlatformException
+     */
+    default public boolean ping(String controllerId) throws APPlatformException {
+        return false;
+    }
+
+    /**
+     * Checks if parameters required for specific controller are configured properly.
+     *
+     * @return <code>true</code> if controller has valid configuration
+     */
+    default public boolean canPing() {
+        return false;
+    }
 }
