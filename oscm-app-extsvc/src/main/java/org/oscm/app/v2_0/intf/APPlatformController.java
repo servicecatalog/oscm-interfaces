@@ -496,7 +496,7 @@ public interface APPlatformController {
      */
     default public boolean gatherUsageData(String controllerId,
             String instanceId, String startTime, String endTime,
-            ProvisioningSettings settings) throws APPlatformException {
+            ProvisioningSettings settings) {
         return false;
     }
 
@@ -511,6 +511,7 @@ public interface APPlatformController {
      * @return <code>true</code> if it is able to connect with service's instance
      * @throws APPlatformException
      */
+    //TODO: Throws ServiceNotReachableException
     default public boolean ping(String controllerId) throws APPlatformException {
         return false;
     }
@@ -520,6 +521,7 @@ public interface APPlatformController {
      *
      * @return <code>true</code> if controller has valid configuration
      */
+    //TODO: Throws ConfigurationException
     default public boolean canPing() {
         return false;
     }
