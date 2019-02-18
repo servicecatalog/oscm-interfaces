@@ -22,6 +22,8 @@ import org.oscm.app.v2_0.data.OperationParameter;
 import org.oscm.app.v2_0.data.ProvisioningSettings;
 import org.oscm.app.v2_0.data.ServiceUser;
 import org.oscm.app.v2_0.exceptions.APPlatformException;
+import org.oscm.app.v2_0.exceptions.ConfigurationException;
+import org.oscm.app.v2_0.exceptions.ServiceNotReachableException;
 
 /**
  * Interface abstracting the access to an application which is to be integrated
@@ -488,7 +490,7 @@ public interface APPlatformController {
      *            - end time of the usage period formatted as
      *            <code>java.time.format.DateTimeFormatter#ISO_LOCAL_DATE_TIME</code>
      * @param settings
-     *            a <code>ProvisioningSettings</code> object specifying the
+ *            a <code>ProvisioningSettings</code> object specifying the
      *            service parameters and configuration settings
      * @return <code>true</code> if usage data was fetched and handled
      *         successfully
@@ -509,10 +511,9 @@ public interface APPlatformController {
      * @param controllerId
      *              - the ID of the controller
      * @return <code>true</code> if it is able to connect with service's instance
-     * @throws APPlatformException
+     * @throws ServiceNotReachableException
      */
-    //TODO: Throws ServiceNotReachableException
-    default public boolean ping(String controllerId) throws APPlatformException {
+    default public boolean ping(String controllerId) throws ServiceNotReachableException {
         return false;
     }
 
@@ -520,9 +521,9 @@ public interface APPlatformController {
      * Checks if parameters required for specific controller are configured properly.
      *
      * @return <code>true</code> if controller has valid configuration
+     * @throws ConfigurationException
      */
-    //TODO: Throws ConfigurationException
-    default public boolean canPing() {
+    default public boolean canPing() throws ConfigurationException {
         return false;
     }
 }
