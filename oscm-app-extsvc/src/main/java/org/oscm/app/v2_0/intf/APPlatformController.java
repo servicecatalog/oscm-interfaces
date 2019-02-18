@@ -498,7 +498,7 @@ public interface APPlatformController {
      */
     default public boolean gatherUsageData(String controllerId,
             String instanceId, String startTime, String endTime,
-            ProvisioningSettings settings) {
+            ProvisioningSettings settings) throws APPlatformException{
         return false;
     }
 
