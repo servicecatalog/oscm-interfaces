@@ -346,7 +346,7 @@ public class ProvisioningSettings extends ControllerSettings
         overwriteProperties(getAttributes(),
                 Arrays.asList(getParameters(), getConfigSettings()),
                 controllerId);
-        overwriteCrossReferences(getAttributes(),
+        overwriteCrossReferences(getParameters(),
                 Arrays.asList(getParameters(), getConfigSettings()),
                 controllerId);
     }
