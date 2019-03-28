@@ -28,7 +28,7 @@ public class ProvisioningSettings extends ControllerSettings
     private static final long serialVersionUID = -1572408823477281540L;
 
     private static final String BSS_PREFIX = "BSS_";
-
+    private static final String CR_PATTERN = "^\\$\\{.*\\}$";
     private String locale;
     private HashMap<String, Setting> parameters;
     private HashMap<String, Setting> attributes;
@@ -346,6 +346,49 @@ public class ProvisioningSettings extends ControllerSettings
         overwriteProperties(getAttributes(),
                 Arrays.asList(getParameters(), getConfigSettings()),
                 controllerId);
+        overwriteCrossReferences(getAttributes(),
+                Arrays.asList(getParameters(), getConfigSettings()),
+                controllerId);
+    }
+
+    protected void overwriteCrossReferences(HashMap<String, Setting> source,
+            List<HashMap<String, Setting>> targets, String controllerId) {
+        for (Map<String, Setting> target : targets) {
+            for (String key : source.keySet()) {
+
+                if (key != null && target.containsKey(key)) {
+
+                    Setting sourceSetting = source.get(key);
+
+                    if (sourceSetting != null
+                            && sourceSetting.getValue() != null
+                            && sourceSetting.getValue().matches(CR_PATTERN)
+                            && !sourceSetting.isEncrypted()
+                            && (controllerId == null || controllerId
+                                    .equals(sourceSetting.getControllerId()))) {
+
+                        String targetKey = tryExtract(sourceSetting.getValue());
+                        Setting toReplaceSetting = target.get(targetKey);
+                        
+                        Setting newSetting = new Setting(key,
+                                toReplaceSetting.getValue());
+
+                        newSetting.setEncrypted(toReplaceSetting.isEncrypted());
+                        target.put(key, newSetting);
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    private String tryExtract(String value) {
+        try {
+            return value.substring(2, value.length() - 1);
+        } catch (IndexOutOfBoundsException ex) {
+            return value;
+        }
     }
 
     private void overwriteProperties(HashMap<String, Setting> source,
@@ -362,6 +405,7 @@ public class ProvisioningSettings extends ControllerSettings
                             && sourceSetting.getValue() != null
                             && sourceSetting.getValue().trim().length() > 0
                             && !sourceSetting.getValue().startsWith(BSS_PREFIX)
+                            && !sourceSetting.getValue().matches(CR_PATTERN)
                             && (controllerId == null || controllerId
                                     .equals(sourceSetting.getControllerId()))) {
 
