@@ -348,7 +348,7 @@ public class ProvisioningSettings extends ControllerSettings
                 controllerId);
         overwriteCrossReferences(getParameters(),
                 Arrays.asList(getParameters(), getConfigSettings()),
-                controllerId);
+                null);
     }
 
     protected void overwriteCrossReferences(HashMap<String, Setting> source,
