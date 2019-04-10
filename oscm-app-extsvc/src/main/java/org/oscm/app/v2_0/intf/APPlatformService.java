@@ -303,6 +303,7 @@ public interface APPlatformService {
      * @param username the user's account id
      * @param password the user's accunt password
      */
-    void updateUserCredentials(long userKey, String username, String password);
+    default void updateUserCredentials(long userKey, String username, String password) {}
+
 
 }
