@@ -1,9 +1,9 @@
 /*******************************************************************************
- *                                                                              
+ *
  *  Copyright FUJITSU LIMITED 2018
- *                                                                              
+ *
  *  Creation Date: 2012-08-16                                                      
- *                                                                              
+ *
  *******************************************************************************/
 
 package org.oscm.app.v2_0.intf;
@@ -34,25 +34,21 @@ public interface APPlatformService {
 
     /**
      * Sends a mail with the specified subject and body to the given recipients.
-     * 
-     * @param mailAddresses
-     *            a list of the mail recipients
-     * @param subject
-     *            the subject of the mail
-     * @param text
-     *            the body of the mail
+     *
+     * @param mailAddresses a list of the mail recipients
+     * @param subject       the subject of the mail
+     * @param text          the body of the mail
      * @throws APPlatformException
      */
     void sendMail(List<String> mailAddresses, String subject,
-            String text) throws APPlatformException;
+                  String text) throws APPlatformException;
 
     /**
      * Returns the basic URL of the APP notification handler. Requests to the
      * notification handler are forwarded to the appropriate service controller.
-     * 
+     *
      * @return the notification handler URL
-     * @throws ConfigurationException
-     *             if the notification handler is not configured correctly
+     * @throws ConfigurationException if the notification handler is not configured correctly
      */
     String getEventServiceUrl() throws ConfigurationException;
 
@@ -64,10 +60,9 @@ public interface APPlatformService {
      * <p>
      * Replace <code>{SERVICE}</code> by the name of the service you want to
      * instantiate (e.g. <code>SubscriptionService</code>).
-     * 
+     *
      * @return the platform service URL
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
+     * @throws ConfigurationException if the configuration settings cannot be loaded
      */
     String getBSSWebServiceUrl() throws ConfigurationException;
 
@@ -79,10 +74,9 @@ public interface APPlatformService {
      * <p>
      * Replace <code>{SERVICE}</code> by the name of the service you want to
      * instantiate (e.g. <code>SubscriptionService</code>).
-     * 
+     *
      * @return the platform service URL
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
+     * @throws ConfigurationException if the configuration settings cannot be loaded
      */
     String getBSSWebServiceWSDLUrl() throws ConfigurationException;
 
@@ -97,25 +91,20 @@ public interface APPlatformService {
      * In order to execute this method, you must specify the credentials of a
      * technology manager registered in the organization which is responsible
      * for the controller.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param instanceId
-     *            the ID of the application instance for which the lock is to be
-     *            set
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
+     *
+     * @param controllerId   the ID of the service controller
+     * @param instanceId     the ID of the application instance for which the lock is to be
+     *                       set
+     * @param authentication a <code>PasswordAuthentication</code> object identifying a
+     *                       technology manager registered in the organization which is
+     *                       responsible for the controller
      * @return <code>true</code> if the lock can be set, <code>false</code> if a
-     *         lock is already set for another instance
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     * lock is already set for another instance
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     boolean lockServiceInstance(String controllerId, String instanceId,
-            PasswordAuthentication authentication)
+                                PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
@@ -125,34 +114,27 @@ public interface APPlatformService {
      * In order to execute this method, you must specify the credentials of a
      * technology manager registered in the organization which is responsible
      * for the controller.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param instanceId
-     *            the ID of the application instance
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     *
+     * @param controllerId   the ID of the service controller
+     * @param instanceId     the ID of the application instance
+     * @param authentication a <code>PasswordAuthentication</code> object identifying a
+     *                       technology manager registered in the organization which is
+     *                       responsible for the controller
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     void unlockServiceInstance(String controllerId, String instanceId,
-            PasswordAuthentication authentication)
+                               PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
      * Checks whether an application instance with the specified ID exists for
      * the given service controller.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param instanceId
-     *            the ID of the application instance to look for
+     *
+     * @param controllerId the ID of the service controller
+     * @param instanceId   the ID of the application instance to look for
      * @return <code>true</code> if the instance exists, <code>false</code>
-     *         otherwise
+     * otherwise
      */
     boolean exists(String controllerId, String instanceId);
 
@@ -162,23 +144,18 @@ public interface APPlatformService {
      * In order to execute this method, you must specify the credentials of a
      * technology manager registered in the organization which is responsible
      * for the controller.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
+     *
+     * @param controllerId   the ID of the service controller
+     * @param authentication a <code>PasswordAuthentication</code> object identifying a
+     *                       technology manager registered in the organization which is
+     *                       responsible for the controller
      * @return the configuration settings, consisting of a key and a value each
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws ConfigurationException  if the configuration settings cannot be loaded
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     HashMap<String, Setting> getControllerSettings(String controllerId,
-            PasswordAuthentication authentication)
+                                                   PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
@@ -187,59 +164,45 @@ public interface APPlatformService {
      * In order to execute this method, you must specify the credentials of a
      * technology manager registered in the organization which is responsible
      * for the controller.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param controllerSettings
-     *            the configuration settings, consisting of a key and a value
-     *            each; specify a <code>null</code> value to remove a setting
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     *
+     * @param controllerId       the ID of the service controller
+     * @param controllerSettings the configuration settings, consisting of a key and a value
+     *                           each; specify a <code>null</code> value to remove a setting
+     * @param authentication     a <code>PasswordAuthentication</code> object identifying a
+     *                           technology manager registered in the organization which is
+     *                           responsible for the controller
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws ConfigurationException  if the configuration settings cannot be loaded
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     void storeControllerSettings(String controllerId,
-            HashMap<String, Setting> controllerSettings,
-            PasswordAuthentication authentication)
+                                 HashMap<String, Setting> controllerSettings,
+                                 PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
      * Authenticates the user specified by the given authentication object as a
      * technology manager in the organization which is responsible for the
      * controller specified by the given ID.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying the
-     *            technology manager to be authenticated in the organization
-     *            which is responsible for the controller
+     *
+     * @param controllerId   the ID of the service controller
+     * @param authentication a <code>PasswordAuthentication</code> object identifying the
+     *                       technology manager to be authenticated in the organization
+     *                       which is responsible for the controller
      * @return an <code>User</code> object holding some details about the
-     *         authenticated user
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     * authenticated user
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws ConfigurationException  if the configuration settings cannot be loaded
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     User authenticate(String controllerId,
-            PasswordAuthentication authentication)
+                      PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
-     * @param controllerId
-     *            the ID of the service controller
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     * @param controllerId the ID of the service controller
+     * @throws ConfigurationException if the configuration settings cannot be loaded
+     * @throws APPlatformException    if a general problem occurs in accessing APP
      */
     void requestControllerSettings(String controllerId)
             throws APPlatformException;
@@ -247,74 +210,57 @@ public interface APPlatformService {
     /**
      * Returns a collection of the IDs of all service instances that are managed
      * by APP in the context of the controller specified by given ID.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
+     *
+     * @param controllerId   the ID of the service controller
+     * @param authentication a <code>PasswordAuthentication</code> object identifying a
+     *                       technology manager registered in the organization which is
+     *                       responsible for the controller
      * @return a collection of the IDs of service instances
      * @throws AuthenticationException
      * @throws ConfigurationException
      * @throws APPlatformException
      */
     Collection<String> listServiceInstances(String controllerId,
-            PasswordAuthentication authentication)
+                                            PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
      * Returns the complete provisioning settings of the defined service
      * instance.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param instanceId
-     *            the ID of the service instance
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
+     *
+     * @param controllerId   the ID of the service controller
+     * @param instanceId     the ID of the service instance
+     * @param authentication a <code>PasswordAuthentication</code> object identifying a
+     *                       technology manager registered in the organization which is
+     *                       responsible for the controller
      * @return a <code>ProvisioningSettings</code> object specifying the service
-     *         parameters and configuration settings
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws ObjectNotFoundException
-     *             if no such service instance exists
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     * parameters and configuration settings
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws ConfigurationException  if the configuration settings cannot be loaded
+     * @throws ObjectNotFoundException if no such service instance exists
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     ProvisioningSettings getServiceInstanceDetails(String controllerId,
-            String instanceId, PasswordAuthentication authentication)
+                                                   String instanceId, PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
      * Returns the complete provisioning settings of the defined service
      * instance without authentication
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param instanceId
-     *            the ID of the service instance
-     * @param subscriptionId
-     *            the ID of the subscription
-     * @param organizationId
-     *            the ID of the organization
+     *
+     * @param controllerId   the ID of the service controller
+     * @param instanceId     the ID of the service instance
+     * @param subscriptionId the ID of the subscription
+     * @param organizationId the ID of the organization
      * @return a <code>ProvisioningSettings</code> object specifying the service
-     *         parameters and configuration settings
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws ObjectNotFoundException
-     *             if no such service instance exists
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     * parameters and configuration settings
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws ConfigurationException  if the configuration settings cannot be loaded
+     * @throws ObjectNotFoundException if no such service instance exists
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     ProvisioningSettings getServiceInstanceDetails(String controllerId,
-            String instanceId, String subscriptionId, String organizationId)
+                                                   String instanceId, String subscriptionId, String organizationId)
             throws APPlatformException;
 
     /**
@@ -323,40 +269,41 @@ public interface APPlatformService {
      * In order to execute this method, you must specify the credentials of a
      * technology manager registered in the organization which is responsible
      * for the controller.
-     * 
-     * @param controllerId
-     *            the ID of the service controller
-     * @param instanceId
-     *            the ID of the service instance
-     * @param settings
-     *            the configuration settings, consisting of a key and a value
-     *            each; specify a <code>null</code> value to remove a setting
-     * @param authentication
-     *            a <code>PasswordAuthentication</code> object identifying a
-     *            technology manager registered in the organization which is
-     *            responsible for the controller
-     * @throws AuthenticationException
-     *             if the authentication of the user fails
-     * @throws ConfigurationException
-     *             if the configuration settings cannot be loaded
-     * @throws APPlatformException
-     *             if a general problem occurs in accessing APP
+     *
+     * @param controllerId   the ID of the service controller
+     * @param instanceId     the ID of the service instance
+     * @param settings       the configuration settings, consisting of a key and a value
+     *                       each; specify a <code>null</code> value to remove a setting
+     * @param authentication a <code>PasswordAuthentication</code> object identifying a
+     *                       technology manager registered in the organization which is
+     *                       responsible for the controller
+     * @throws AuthenticationException if the authentication of the user fails
+     * @throws ConfigurationException  if the configuration settings cannot be loaded
+     * @throws APPlatformException     if a general problem occurs in accessing APP
      */
     void storeServiceInstanceDetails(String controllerId,
-            String instanceId, ProvisioningSettings settings,
-            PasswordAuthentication authentication)
+                                     String instanceId, ProvisioningSettings settings,
+                                     PasswordAuthentication authentication)
             throws APPlatformException;
 
     /**
      * Checks the the hash from the given token against the decrypted hash from
      * the signature using the BSS public key.
-     * 
-     * @param token
-     *            the token to hash
-     * @param signature
-     *            the encrypted token hash
+     *
+     * @param token     the token to hash
+     * @param signature the encrypted token hash
      * @return true if token and signature match
      */
-    public boolean checkToken(String token, String signature);
+    boolean checkToken(String token, String signature);
+
+    /**
+     * Updates the user's password for related controllers configuration.
+     *
+     * @param userKey  the key of the user
+     * @param username the user's account id
+     * @param password the user's accunt password
+     */
+    default void updateUserCredentials(long userKey, String username, String password) {}
+
 
 }
