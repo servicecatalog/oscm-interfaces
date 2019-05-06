@@ -16,8 +16,8 @@ import org.oscm.internal.types.exception.beans.DigitalSignatureValidationExcepti
  * @author kulle
  * 
  */
-public class DigitalSignatureValidationException extends
-        SaaSApplicationException {
+public class DigitalSignatureValidationException
+        extends SaaSApplicationException {
 
     private static final long serialVersionUID = -9006836433751915578L;
 
@@ -50,7 +50,8 @@ public class DigitalSignatureValidationException extends
      * @param cause
      *            the cause
      */
-    public DigitalSignatureValidationException(String message, Throwable cause) {
+    public DigitalSignatureValidationException(String message,
+            Throwable cause) {
         super(message, cause);
     }
 
@@ -62,22 +63,23 @@ public class DigitalSignatureValidationException extends
      * @param reason
      *            the reason
      */
-    public DigitalSignatureValidationException(String message, ReasonEnum reason) {
+    public DigitalSignatureValidationException(String message,
+            ReasonEnum reason) {
         super(message);
         bean.setReason(reason);
         setMessageKey(getMessageKey() + "." + reason.toString());
     }
 
     /**
-     * Constructs a new exception with the given detail message and message
-     * parameters, and appends the specified reason to the message key.
+     * Constructs a new exception with the given detail message and causing
+     * exception, and appends the specified reason to the message key.
      * 
      * @param message
      *            the detail message
      * @param reason
      *            the reason
      * @param cause
-     *            the causing error
+     *            the causing exception
      */
     public DigitalSignatureValidationException(String message,
             ReasonEnum reason, Throwable cause) {

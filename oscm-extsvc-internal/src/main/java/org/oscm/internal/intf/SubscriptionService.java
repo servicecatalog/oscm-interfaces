@@ -305,7 +305,7 @@ public interface SubscriptionService {
      *             subscription fails
      * @throws OperationPendingException
      *             if another request to terminate the subscription is pending
-     * @throws OperationNotPermittedException
+     * @throws OperationNotPermittedException if the operation is not permitted
      */
 
     boolean unsubscribeFromService(String subscriptionId)
@@ -326,7 +326,7 @@ public interface SubscriptionService {
      * @return the subscription details
      * @throws ObjectNotFoundException
      *             if the subscription is not found
-     * @throws OperationNotPermittedException
+     * @throws OperationNotPermittedException if the operation is not permitted
      */
 
     VOSubscriptionDetails getSubscriptionDetails(String subscriptionId)
@@ -344,7 +344,7 @@ public interface SubscriptionService {
      * @return the subscription details
      * @throws ObjectNotFoundException
      *             if the subscription is not found
-     * @throws OperationNotPermittedException
+     * @throws OperationNotPermittedException if the operation is not permitted
      */
 
     VOSubscriptionDetails getSubscriptionDetails(long subscriptionKey)
@@ -1417,7 +1417,7 @@ public interface SubscriptionService {
      * @param subscriptionKey
      *            - the subscription key
      * @return Subscription details
-     * @throws ObjectNotFoundException
+     * @throws ObjectNotFoundException if the object was not found
      */
     VOSubscriptionDetails getSubscriptionDetailsWithoutOwnerCheck(
             long subscriptionKey) throws ObjectNotFoundException;
@@ -1436,13 +1436,13 @@ public interface SubscriptionService {
      *            the subscriptions technical key
      * @return <code>true</code> if unsubscribe was executed, <code>false</code>
      *         in case of an existing suspending trigger
-     * @throws ObjectNotFoundException
-     * @throws SubscriptionStillActiveException
-     * @throws SubscriptionStateException
-     * @throws TechnicalServiceNotAliveException
-     * @throws TechnicalServiceOperationException
-     * @throws OperationPendingException
-     * @throws OperationNotPermittedException
+     * @throws ObjectNotFoundException if the object was not found
+     * @throws SubscriptionStillActiveException when the subscription is still active
+     * @throws SubscriptionStateException if the the subscription hase a wrong state
+     * @throws TechnicalServiceNotAliveException if the technical service is not alive
+     * @throws TechnicalServiceOperationException if a operation in the technical service fails
+     * @throws OperationPendingException when a operation is pending
+     * @throws OperationNotPermittedException when a opration is pending
      */
     boolean unsubscribeFromService(Long key)
             throws ObjectNotFoundException, SubscriptionStillActiveException,
@@ -1465,6 +1465,7 @@ public interface SubscriptionService {
      *            the value object containing instance information
      * @throws ObjectNotFoundException
      *             if the organization or subscription is not found
+     * @throws OperationNotPermittedException when the operation is not permitted            
      */
     void notifySubscriptionAboutVmsNumber(String subscriptionId,
             String organizationId, VOInstanceInfo instanceInfo)
@@ -1478,13 +1479,14 @@ public interface SubscriptionService {
      *            Subscription UUID
      * @param instanceInfo
      *            VOInstanceInfo instanceInfo
-     * @throws ValidationException
-     * @throws OperationNotPermittedException
-     * @throws OrganizationAuthoritiesException
-     * @throws TechnicalServiceOperationException
-     * @throws TechnicalServiceNotAliveException
-     * @throws SubscriptionStateException
-     * @throws ObjectNotFoundException
+     * @throws ValidationException if the validation fails
+     * @throws OperationNotPermittedException if the operation is not permitted
+     * @throws OrganizationAuthoritiesException if the organization is not authorized 
+     * @throws TechnicalServiceOperationException if a technical service operation fails
+     * @throws TechnicalServiceNotAliveException when the technical service is not alive
+     * @throws SubscriptionStateException when the subscription state is wrong
+     * @throws ObjectNotFoundException when a object was not found
+     * 
      */
     void completeAsyncSubscription(UUID subscriptionUUID,
             VOInstanceInfo instanceInfo) throws ObjectNotFoundException,

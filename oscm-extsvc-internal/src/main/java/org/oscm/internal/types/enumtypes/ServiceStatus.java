@@ -44,6 +44,7 @@ public enum ServiceStatus {
 
     /**
      * Indicates if the service can be defined for the landing page
+     * @return if is status valid for landing page 
      */
 	public boolean isStatusValidForLandingPage() {
 		return this != ServiceStatus.DELETED && this != ServiceStatus.SUSPENDED;

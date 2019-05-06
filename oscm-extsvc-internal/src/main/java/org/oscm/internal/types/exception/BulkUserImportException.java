@@ -20,15 +20,15 @@ public class BulkUserImportException extends SaaSApplicationException {
     private BulkUserImportExceptionBean bean = new BulkUserImportExceptionBean();
 
     /**
-     * Constructs a new exception with the given cause, reason, failed line, and
-     * appends the specified reason to the message key.
+     * Constructs a new exception with the specified reason, cause, and line
+     * number in the CSV file where the problem occurred.
      * 
      * @param reason
      *            the reason
      * @param cause
      *            the cause
      * @param lineNumber
-     *            the line on which the file parsing failed
+     *            the line number in the CSV file
      */
     public BulkUserImportException(Reason reason, Exception cause,
             int lineNumber) {
@@ -39,8 +39,7 @@ public class BulkUserImportException extends SaaSApplicationException {
     }
 
     /**
-     * Constructs a new exception with the given cause, reason, and appends the
-     * specified reason to the message key.
+     * Constructs a new exception with the specified reason and cause.
      * 
      * @param reason
      *            the reason
@@ -65,24 +64,24 @@ public class BulkUserImportException extends SaaSApplicationException {
      * Constructs a new exception with the specified detail message. The cause
      * is not initialized.
      * 
-     * @param message
+     * @param msg
      *            the detail message
      */
-    public BulkUserImportException(String message) {
-        super(message);
+    public BulkUserImportException(String msg) {
+        super(msg);
     }
 
     /**
      * Constructs a new exception with the specified detail message and bean for
      * JAX-WS exception serialization.
      * 
-     * @param message
+     * @param msg
      *            the detail message
      * @param bean
      *            the bean for JAX-WS exception serialization
      */
-    public BulkUserImportException(String message, BulkUserImportExceptionBean bean) {
-        super(message, bean);
+    public BulkUserImportException(String msg, BulkUserImportExceptionBean bean) {
+        super(msg, bean);
         this.bean = bean;
     }
 
@@ -90,16 +89,16 @@ public class BulkUserImportException extends SaaSApplicationException {
      * Constructs a new exception with the specified detail message, cause, and
      * bean for JAX-WS exception serialization.
      * 
-     * @param message
+     * @param msg
      *            the detail message
      * @param bean
      *            the bean for JAX-WS exception serialization
      * @param cause
      *            the cause
      */
-    public BulkUserImportException(String message,
+    public BulkUserImportException(String msg,
             BulkUserImportExceptionBean bean, Throwable cause) {
-        super(message, bean, cause);
+        super(msg, bean, cause);
         this.bean = bean;
     }
 
@@ -111,45 +110,45 @@ public class BulkUserImportException extends SaaSApplicationException {
     public static enum Reason {
 
         /**
-         * Parsing the CSV data failed completely, e.g. a closing quote is
-         * missing
+         * Parsing the CSV data failed as a whole, for example, because a
+         * closing quote is missing
          */
         PARSING_FAILED,
 
         /**
-         * One line in the CSV data does not contain enough commas
+         * One line in the CSV data does not contain enough commas.
          */
         WRONG_NUMBER_OF_FIELDS,
 
         /**
          * One line in the CSV data contains a salutation that could not be
-         * recognized by the system
+         * recognized.
          */
         WRONG_SALUTATION,
 
         /**
-         * One line in the CSV data contains a role that could not be recognized
-         * by the system
+         * One line in the CSV data contains a role that could not be
+         * recognized.
          */
         WRONG_ROLE,
 
         /**
-         * One line in the CSV data does not contain a user ID
+         * One line in the CSV data does not contain a user ID.
          */
         MISSING_USERID,
 
         /**
-         * One line in the CSV data does not contain a locale
+         * One line in the CSV data does not contain a locale.
          */
         MISSING_LOCALE,
 
         /**
-         * User creation failed for unknown reason
+         * The user creation failed for unknown reasons.
          */
         USER_CREATION_FAILED,
 
         /**
-         * The importing user must have an email set.
+         * The user to import must have an email address set.
          */
         EMAIL_REQUIRED;
 
@@ -160,5 +159,4 @@ public class BulkUserImportException extends SaaSApplicationException {
         return new BulkUserImportExceptionBean(super.getFaultInfo(),
                 bean.getReason());
     }
-
 }

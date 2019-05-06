@@ -113,7 +113,7 @@ public interface ServiceProvisioningServiceInternal {
      * @param locale
      *            language
      * @return the partner as VOOrganization
-     * @throws ObjectNotFoundException
+     * @throws ObjectNotFoundException if the object was not found
      */
     public VOOrganization getPartnerForService(long serviceKey, String locale)
             throws ObjectNotFoundException;

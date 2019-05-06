@@ -57,15 +57,15 @@ public class AssertionValidationException extends SaaSApplicationException {
     }
 
     /**
-     * Constructs a new exception with the given detail message and message
-     * parameters, and appends the specified reason to the message key.
+     * Constructs a new exception with the given detail message and causing
+     * exception, and appends the specified reason respective message key.
      * 
      * @param message
      *            the detail message
      * @param reason
      *            the reason
      * @param cause
-     *            the causing error
+     *            the causing exception
      */
     public AssertionValidationException(String message, ReasonEnum reason,
             Throwable cause) {

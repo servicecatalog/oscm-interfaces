@@ -63,6 +63,13 @@ public interface TenantService {
      */
     void removeTenant(VOTenant voTenant) throws ObjectNotFoundException, TenantDeletionConstraintException;
     
+    
+    /**
+     * Get tenant from DB
+     * @param key represents tenant to be removed.
+     * @throws ObjectNotFoundException if tenant does not exists in DB
+     * @return Tenant value object
+     */
     VOTenant getTenantByKey(long key) throws ObjectNotFoundException;
 
     /**
@@ -85,14 +92,14 @@ public interface TenantService {
     /**
      * Retrieves settings for tenant
      * @param key tenant key to which settings are being returned.
-     * @return
+     * @return list of Tenant settings
      */
     List<VOTenantSetting> getSettingsForTenant(long key);
 
     /**
      * Finds tenant by its id pattern.
      * @param tenantIdPattern set of characters to which tenant should be found.
-     * @return
+     * @return list of Tenants
      */
     List<VOTenant> getTenantsByIdPattern(String tenantIdPattern);
 
@@ -100,7 +107,7 @@ public interface TenantService {
      * Checks if at least one user exists for tenant.
      * @param orgId Organization id
      * @param tenantKey tenant tkey
-     * @return
+     * @return if user exist
      */
     boolean doOrgUsersExistInTenant(String orgId, long tenantKey);
 }

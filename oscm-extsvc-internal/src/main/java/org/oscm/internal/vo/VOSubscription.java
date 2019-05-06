@@ -46,6 +46,8 @@ public class VOSubscription extends BaseVO  {
     private String customTabUrl;
     private String customTabName;
     private String organizationId;
+    private String provisioningError;
+    
     /**
      * The technical service operations.
      */
@@ -465,7 +467,7 @@ public class VOSubscription extends BaseVO  {
     /**
      * Sets the name of the unit to which the subscription is assigned to.
      * 
-     * @param unitName
+     * @param unitName the name of the uni
      */
     public void setUnitName(String unitName) {
         this.unitName = unitName;
@@ -485,7 +487,7 @@ public class VOSubscription extends BaseVO  {
      * Sets the database key of the user group (unit), the subscription is
      * assigned to.
      * 
-     * @param unitKey
+     * @param unitKey the key of the unit
      */
     public void setUnitKey(long unitKey) {
         this.unitKey = unitKey;
@@ -531,4 +533,14 @@ public class VOSubscription extends BaseVO  {
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
+
+	public String getProvisioningError() {
+		return provisioningError;
+	}
+
+	public void setProvisioningError(String provisioningError) {
+		this.provisioningError = provisioningError;
+	}
+    
+    
 }
