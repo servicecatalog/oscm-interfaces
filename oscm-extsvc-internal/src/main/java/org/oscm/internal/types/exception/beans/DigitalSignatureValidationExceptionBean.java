@@ -12,11 +12,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.oscm.internal.types.exception.DigitalSignatureValidationException;
 import org.oscm.internal.types.exception.DigitalSignatureValidationException.ReasonEnum;
 
 /**
  * Bean for JAX-WS exception serialization, specific for
- * {@link org.oscm.internal.types.exception.DigitalSignatureValidationException}.
+ * {@link DigitalSignatureValidationException}.
  */
 @XmlRootElement(name = "DigitalSignatureValidationExceptionBean")
 @XmlAccessorType(XmlAccessType.PROPERTY)

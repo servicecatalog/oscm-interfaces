@@ -33,6 +33,8 @@ public enum LandingpageType {
 
     /**
      * Returns true if this enum contains the element given name
+     * @param name the name
+     * @return if the name is contained
      */
     public static boolean contains(String name) {
         return names().contains(name);
@@ -40,6 +42,7 @@ public enum LandingpageType {
 
     /**
      * Names of all enum elements
+     * @return a list of names
      */
     public static List<String> names() {
         final LandingpageType types[] = values();

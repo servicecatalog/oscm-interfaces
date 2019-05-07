@@ -11,6 +11,7 @@ package org.oscm.internal.intf;
 import java.util.List;
 import java.util.Set;
 
+import javax.ejb.EJBException;
 import javax.ejb.Remote;
 
 import org.oscm.internal.types.enumtypes.PerformanceHint;
@@ -234,10 +235,10 @@ public interface AccountService {
 
     public VOOrganization registerKnownCustomer(VOOrganization organization,
             VOUserDetails user, LdapProperties organizationProperties,
-            String marketplaceId)
-            throws OrganizationAuthoritiesException, ValidationException,
-            NonUniqueBusinessKeyException, MailOperationException,
-            ObjectNotFoundException, OperationPendingException;
+            String marketplaceId) throws OrganizationAuthoritiesException,
+            ValidationException, NonUniqueBusinessKeyException,
+            MailOperationException, ObjectNotFoundException,
+            OperationPendingException;
 
     /**
      * Updates the data of the organization to which the calling user belongs,
@@ -294,9 +295,9 @@ public interface AccountService {
 
     public void updateAccountInformation(VOOrganization organization,
             VOUserDetails user, String marketplaceId,
-            VOImageResource imageResource)
-            throws ValidationException, NonUniqueBusinessKeyException,
-            OperationNotPermittedException, TechnicalServiceNotAliveException,
+            VOImageResource imageResource) throws ValidationException,
+            NonUniqueBusinessKeyException, OperationNotPermittedException,
+            TechnicalServiceNotAliveException,
             TechnicalServiceOperationException, ObjectNotFoundException,
             DistinguishedNameException, ConcurrentModificationException,
             ImageException;
@@ -317,9 +318,20 @@ public interface AccountService {
     public List<VOOrganization> getMyCustomers()
             throws OrganizationAuthoritiesException;
 
+    /**
+     * Returns the suppliers who are authorized to offer marketable services
+     * based on the specified technical service.
+     * <p>
+     * Required role: technology manager of the technology provider organization
+     * that owns the technical service
+     * 
+     * @return the supplier organizations
+     */
+
     public List<VOOrganization> getMyCustomersOptimization()
             throws OrganizationAuthoritiesException;
-
+    
+    
     /**
      * Returns the suppliers who are authorized to offer marketable services
      * based on the specified technical service.
@@ -481,8 +493,8 @@ public interface AccountService {
      */
 
     public Set<VOPaymentType> getAvailablePaymentTypesFromOrganization(
-            Long serviceKey)
-            throws OrganizationAuthoritiesException, ObjectNotFoundException;
+            Long serviceKey) throws OrganizationAuthoritiesException,
+            ObjectNotFoundException;
 
     /**
      * Retrieves the billing contacts of the calling user's organization.
@@ -635,6 +647,8 @@ public interface AccountService {
      * @throws ConcurrentModificationException
      *             if the stored discount information is changed by another user
      *             in the time between reading and writing it
+     * @throws EJBException
+     *             if the calling user does not have the service manager role
      */
 
     public VOOrganization updateCustomerDiscount(VOOrganization organization)
@@ -734,11 +748,11 @@ public interface AccountService {
      * @throws ObjectNotFoundException
      *             if the target object is not found
      */
-    
+
     public List<VOUda> getUdas(String targetType, long targetObjectKey,
-            boolean checkSeller)
-            throws ValidationException, OrganizationAuthoritiesException,
-            ObjectNotFoundException, OperationNotPermittedException;
+            boolean checkSeller) throws ValidationException,
+            OrganizationAuthoritiesException, ObjectNotFoundException,
+            OperationNotPermittedException;
 
     /**
      * Saves the specified list of custom attributes. For each attribute in the
@@ -774,7 +788,7 @@ public interface AccountService {
      *             required for handling custom attributes with the specified
      *             target type
      */
-    
+
     public void saveUdas(List<VOUda> udas) throws ValidationException,
             ObjectNotFoundException, OperationNotPermittedException,
             ConcurrentModificationException, NonUniqueBusinessKeyException,
@@ -818,7 +832,7 @@ public interface AccountService {
      * Required role: service manager of a supplier organization, broker or a
      * broker organization, or reseller of a reseller organization
      * 
-     * @param organization
+     * @param org
      *            object the organization object with key or organization id of
      *            the customer organization
      * @param locale
@@ -830,8 +844,8 @@ public interface AccountService {
      *             if the organization is not found.
      */
 
-    public VOOrganization getMyCustomer(VOOrganization organization,
-            String locale) throws ObjectNotFoundException;
+    public VOOrganization getMyCustomer(VOOrganization org, String locale)
+            throws ObjectNotFoundException;
 
     /**
      * Deletes the specified payment information for the calling user's

@@ -78,6 +78,7 @@ public interface SubscriptionServiceInternal {
      * 
      * @param user
      *            the user for whom the list of subscriptions is to be retrieved
+     * @param performanceHint Specifies filters for domain object data which can be used to improveperformance.
      * @return the list of subscriptions
      * @throws ObjectNotFoundException
      *             if the user is not found

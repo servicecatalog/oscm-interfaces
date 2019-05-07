@@ -163,7 +163,7 @@ public class VOPriceModel extends BaseVO {
      * Returns the JSON representation of the price model as a string. The
      * representation is only valid for external price models.
      * 
-     * @return
+     * @return the json representation of the price model
      */
     public String getAsJSON() {
         if (presentation != null

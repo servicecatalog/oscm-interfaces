@@ -561,8 +561,8 @@ public class VOService extends BaseVO {
      * service, otherwise <code>false</code>. If it's enabled, the subscribing
      * user will be automatically assigned to the created subscription.
      * 
-     * <br> This method is redundant to {@link #isAutoAssignUserEnabled()}, but
-     * is required by the <code>org.oscm.converter.XMLSerializer</code> (oscm-commons).
+     * This method is redundant to <code>#isAutoAssignUserEnabled()</code>, but
+     * is required by the <code>org.oscm.converter.XMLSerializer</code>.
      * Otherwise the attribute is not persisted in the trigger process.
      * 
      * @return if auto assignment is enabled
@@ -602,7 +602,7 @@ public class VOService extends BaseVO {
     /**
      * Sets the URL of an external parameter tool.
      * 
-     * @param configuratorUrl
+     * @param configuratorUrl the url of the Configuration
      */
     public void setConfiguratorUrl(String configuratorUrl) {
         this.configuratorUrl = configuratorUrl;
@@ -612,7 +612,7 @@ public class VOService extends BaseVO {
     /**
      * Sets the URL of custom tab on my subscriptions page.
      *
-     * @param customTabUrl
+     * @param customTabUrl the url of the custom tab
      */
     public void setCustomTabUrl(String customTabUrl) {
         this.customTabUrl = customTabUrl;
@@ -628,7 +628,7 @@ public class VOService extends BaseVO {
     /**
      * Sets the identifier of adapter for external billing system.
      * 
-     * @param billingIdentifier
+     * @param billingIdentifier the billing identifier
      */
     public void setBillingIdentifier(String billingIdentifier) {
         this.billingIdentifier = billingIdentifier;

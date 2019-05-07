@@ -30,6 +30,7 @@ public class TaskErrorHandlingException extends SaaSSystemException {
      * 
      * @param message
      *            the detail message
+     * @param cause the cause           
      */
     public TaskErrorHandlingException(String message, Exception cause) {
         super(message, cause);

@@ -1385,8 +1385,8 @@ public interface ServiceProvisioningService {
      * customer-specific price model for a marketable service.
      * 
      * @return the list of customer-specific services
-     * @throws ObjectNotFoundException
-     * @throws OperationNotPermittedException
+     * @throws ObjectNotFoundException if the object was not found
+     * @throws OperationNotPermittedException if the operation was not permitted
      */
 
     public List<VOCustomerService> getServiceCustomerTemplates(VOService service)
@@ -1397,12 +1397,12 @@ public interface ServiceProvisioningService {
      * 
      * @param key
      *            the technical key
-     * @throws ConcurrentModificationException
-     * @throws ServiceStateException
-     * @throws ServiceOperationException
-     * @throws OperationNotPermittedException
-     * @throws OrganizationAuthoritiesException
-     * @throws ObjectNotFoundException
+     * @throws ConcurrentModificationException if there was a concurrency in the modicfication
+     * @throws ServiceStateException if there was an error in the service state
+     * @throws ServiceOperationException if there was an error in the service operation
+     * @throws OperationNotPermittedException when the operation was not permitted
+     * @throws OrganizationAuthoritiesException when the organization has no authorization 
+     * @throws ObjectNotFoundException when the object was not found
      */
     public void deleteService(Long key) throws ObjectNotFoundException,
             OrganizationAuthoritiesException, OperationNotPermittedException,
@@ -1414,11 +1414,11 @@ public interface ServiceProvisioningService {
      * 
      * @param key
      *            the technical key
-     * @throws OperationNotPermittedException
-     * @throws ObjectNotFoundException
-     * @throws ConcurrentModificationException
-     * @throws OrganizationAuthoritiesException
-     * @throws DeletionConstraintException
+     * @throws OperationNotPermittedException when the operation was not permitted
+     * @throws ObjectNotFoundException when the object was not found
+     * @throws ConcurrentModificationException if there was a concurrency in the modicfication
+     * @throws OrganizationAuthoritiesException when the organization has no authorization 
+     * @throws DeletionConstraintException when there was a constraint while deleting
      */
     public void deleteTechnicalService(Long key)
             throws ObjectNotFoundException, OperationNotPermittedException,

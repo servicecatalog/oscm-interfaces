@@ -143,12 +143,6 @@ public enum ConfigurationKey {
     @Example("http://<your server>:<your port>/Report/ReportingServiceBean or https://<your server>:<your port>/ReportSecure/ReportingServiceSecureBean")
     REPORT_SOAP_ENDPOINT(false, "", "url"),
 
-    @Doc({ "The proxy to be used for HTTP connections, if any." })
-    HTTP_PROXY(false, "", "string"),
-
-    @Doc({ "The proxy port to be used for HTTP connections, if any." })
-    HTTP_PROXY_PORT(false, "1080", "long", Long.valueOf(1L), Long.valueOf(65535L), false),
-
     @Doc({ "Specifies whether the PSP integration is used for the",
             "current environment." })
     @Example("false")
@@ -342,16 +336,16 @@ public enum ConfigurationKey {
     HIDE_PAYMENT_INFORMATION(false, null, "boolean", true),
 
     @Doc({ "The alias of the private key to be used for signing SAML and custom tab requests" })
-    @Example("s1as")
-    SSO_SIGNING_KEY_ALIAS(false, "s1as", "string"),
+    @Example("1")
+    SSO_SIGNING_KEY_ALIAS(false, "1", "string"),
 
     @Doc({ "The password for the keystore containing the private key for signing SAML and custom tab requests" })
     @Example("changeit")
     SSO_SIGNING_KEYSTORE_PASS(false, "changeit", "password"),
 
     @Doc({ "The path of the keystore holding the private key for signing SAML and custom tab requests." })
-    @Example("<path>/keystore.jks")
-    SSO_SIGNING_KEYSTORE(false, "./keystore.jks", "string"),
+    @Example("<path>/ssl.p12")
+    SSO_SIGNING_KEYSTORE(false, "/opt/apache-tomee/conf/ssl.p12", "string"),
 
     @Doc({ "The ID of the default tenant for user authentication in SAML_SP mode. ",
            "The value must consist of 8 alphanumeric characters." })
@@ -370,7 +364,11 @@ public enum ConfigurationKey {
 
     @Doc({ "The Kafka configuration property bootstrap.servers." })
     @Example("localhost:9092")
-    KAFKA_BOOTSTRAP_SERVERS(false, "", "string");
+    KAFKA_BOOTSTRAP_SERVERS(false, "", "string"),
+
+    @Doc({ "URL of deployed oscm-help" })
+    @Example("http://localhost:8580/oscm-portal-help")
+    HELP_URL(false, "", "string");
 
     // ///////////////////////////////////////////////////////////////////////////////////
 
@@ -532,8 +530,8 @@ public enum ConfigurationKey {
      * Prints a documented configuration file populated with all config keys and
      * their default values.
      * 
-     * @param out
-     * @throws Exception
+     * @param out the printstream
+     * @throws Exception if the example is null
      */
     public static void printExampleConfig(PrintStream out) throws Exception {
         for (final ConfigurationKey key : ConfigurationKey.values()) {

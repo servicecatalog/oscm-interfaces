@@ -12,11 +12,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.oscm.internal.types.exception.DeletionConstraintException;
 import org.oscm.internal.types.exception.DomainObjectException.ClassEnum;
 
 /**
  * Bean for JAX-WS exception serialization, specific for
-* {@link org.oscm.internal.types.exception.DeletionConstraintException}.
+ * {@link DeletionConstraintException}.
  * 
  */
 @XmlRootElement(name = "DeletionConstraintExceptionBean")

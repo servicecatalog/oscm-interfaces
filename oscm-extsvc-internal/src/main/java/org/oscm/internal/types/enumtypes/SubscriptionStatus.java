@@ -69,6 +69,7 @@ public enum SubscriptionStatus {
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#SUSPENDED} or
      * {@link SubscriptionStatus#SUSPENDED_UPD}
+     * @return if the  subscription is suspended os supsended upd
      */
     public boolean isSuspendedOrSuspendedUpd() {
         return this == SUSPENDED || this == SUSPENDED_UPD;
@@ -78,6 +79,7 @@ public enum SubscriptionStatus {
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#ACTIVE} or
      * {@link SubscriptionStatus#PENDING_UPD}
+     * @return if the subscription is active os pending upd
      */
     public boolean isActiveOrPendingUpd() {
         return this == ACTIVE || this == PENDING_UPD;
@@ -86,6 +88,7 @@ public enum SubscriptionStatus {
     /**
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#ACTIVE}
+     * @return if is acrive
      */
     public boolean isActive() {
         return this == ACTIVE;
@@ -94,6 +97,7 @@ public enum SubscriptionStatus {
     /**
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#EXPIRED}
+     * @return if is expired
      */
     public boolean isExpired() {
         return this == EXPIRED;
@@ -103,6 +107,7 @@ public enum SubscriptionStatus {
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#ACTIVE} or
      * {@link SubscriptionStatus#PENDING}
+     * @return if is active or is pending
      */
     public boolean isActiveOrPending() {
         return this == ACTIVE || this == PENDING;
@@ -111,6 +116,7 @@ public enum SubscriptionStatus {
     /**
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#PENDING}
+     * @return if is pending
      */
     public boolean isPending() {
         return this == PENDING;
@@ -120,6 +126,7 @@ public enum SubscriptionStatus {
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#PENDING_UPD} or
      * {@link SubscriptionStatus#SUSPENDED_UPD}
+     * @return if is pending upd or suspended upd
      */
     public boolean isPendingUpdOrSuspendedUpd() {
         return this == PENDING_UPD || this == SUSPENDED_UPD;
@@ -129,6 +136,7 @@ public enum SubscriptionStatus {
      * Convenience method returning <code>true</code> if the subscription is
      * either {@link SubscriptionStatus#INVALID} or
      * {@link SubscriptionStatus#DEACTIVATED}
+     * @return if is invalid or deactive
      */
     public boolean isInvalidOrDeactive() {
         return this == INVALID || this == DEACTIVATED;

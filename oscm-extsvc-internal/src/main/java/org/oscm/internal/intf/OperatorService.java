@@ -229,6 +229,7 @@ public interface OperatorService {
      * @throws ObjectNotFoundException
      *             Thrown in case the user was not found.
      * @throws ValidationException
+     *             if the validation fails
      * @throws OrganizationAuthoritiesException
      *             Thrown in case the caller does not have the platform operator
      *             role.
@@ -348,6 +349,8 @@ public interface OperatorService {
      *             configuration setting.
      * @throws ConcurrentModificationException
      *             Thrown if the object was changed concurrently
+     * @throws DuplicateTenantIdException if
+     *             the tenant id is duplicated
      */
     void saveConfigurationSetting(VOConfigurationSetting setting)
             throws OrganizationAuthoritiesException, ValidationException,
@@ -367,6 +370,8 @@ public interface OperatorService {
      *             configuration setting.
      * @throws ConcurrentModificationException
      *             Thrown if the object was changed concurrently
+     * @throws DuplicateTenantIdException if
+     *             the tenant id is duplicated
      */
     void saveConfigurationSettings(List<VOConfigurationSetting> settings)
             throws OrganizationAuthoritiesException, ValidationException,
@@ -433,6 +438,8 @@ public interface OperatorService {
      * @throws AddMarketingPermissionException
      *             If the supplier could not be loaded or the organization does
      *             not have the supplier role.
+     *  @throws NonUniqueBusinessKeyException if the business key isn't unique           
+     *             
      */
     VOOperatorOrganization updateOrganization(
             VOOperatorOrganization organization, VOImageResource imageResource)
@@ -548,12 +555,14 @@ public interface OperatorService {
      * This returned instance is a key value map, where the values represent the
      * operation display names, and the keys represent the internal log type
      * names referring to the operations.
+     * @return a map of available audit log operations
      */
     Map<String, String> getAvailableAuditLogOperations();
 
     /**
      * Returns a map containing all groups of operations, which are written to
      * the audit log file.
+     * @return a map auf available audit log operations groups
      */
     Map<String, String> getAvailableAuditLogOperationGroups();
 
@@ -652,7 +661,7 @@ public interface OperatorService {
      *             already exists.
      * @throws ValidationException
      *             Thrown in case the payment type could not be validated.
-     * @throws ConcurrentModificationException
+     * @throws ConcurrentModificationException if there is a concurrency during modification
      */
     VOPaymentType savePaymentType(VOPSP psp, VOPaymentType paymentType)
             throws ObjectNotFoundException, NonUniqueBusinessKeyException,
@@ -670,8 +679,8 @@ public interface OperatorService {
     byte[] getSupplierRevenueList(long month);
 
     /**
-     * @param subscriptionKey
-     * @param organizationKey
+     * @param subscriptionKey the subscription key
+     * @param organizationKey the organization key
      * @return
      */
     List<VOUserDetails> getUnassignedUsersByOrg(Long subscriptionKey,
@@ -682,7 +691,7 @@ public interface OperatorService {
      * 
      * @param key
      *            the technical key
-     * @throws ObjectNotFoundException
+     * @throws ObjectNotFoundException if the object was not found
      */
     void deleteConfigurationSetting(Long key) throws ObjectNotFoundException;
 
@@ -692,14 +701,14 @@ public interface OperatorService {
      * @param key
      *            the technical key
      * @return the setting
-     * @throws ObjectNotFoundException
+     * @throws ObjectNotFoundException if the object was not found
      */
     VOConfigurationSetting getConfigurationSetting(Long key)
             throws ObjectNotFoundException;
 
     /**
      * Returns collection of subscriptions with usage data.
-     * @return
+     * @return a collection of subscription usage report
      */
     Collection<VOSubscriptionUsageEntry> getSubscriptionUsageReport();
 }

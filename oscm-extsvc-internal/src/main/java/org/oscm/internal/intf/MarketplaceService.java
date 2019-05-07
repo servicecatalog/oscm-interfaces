@@ -580,7 +580,7 @@ public interface MarketplaceService {
      * @param organizationId
      * @return true - if organization has access to marketplace, false -
      *         otherwise
-     * @throws LoginException
+     * @throws LoginException if login fails
      */
     boolean doesOrganizationHaveAccessMarketplace(String marketplaceId,
             String organizationId) throws LoginException;
