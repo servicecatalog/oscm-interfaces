@@ -826,4 +826,13 @@ public interface IdentityService {
      */
     void revokeUnitRole(VOUser user, UserRoleType role)
             throws ObjectNotFoundException, OperationNotPermittedException;
+    /**
+     * load the user details form the open id connect provider
+     * @param userId the id of the user
+     * @param tenantId the it of the tenant
+     * @return a VOUserDetails object with all user informations
+     */
+    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId, String tenantId) {
+        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    };
 }
