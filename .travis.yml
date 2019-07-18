@@ -1,11 +1,6 @@
-addons:
-  sonarcloud:
-    organization: servicecatalog
-    token: $SONAR_TOKEN
-sudo: false
 language: java
 jdk:
-  - oraclejdk8
+  - openjdk8
 env:
   - MVN_GOAL=test
 before_install:
@@ -14,5 +9,3 @@ install:
   - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.defaultLogLevel=info mvn install -q -DskipTests=true -Dmaven.javadoc.skip=true -B -P travis
 script:
   - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.defaultLogLevel=info mvn org.jacoco:jacoco-maven-plugin:prepare-agent $MVN_GOAL -q -fae -Dmaven.javadoc.skip=true -DfailIfNoTests=false -B -P travis
-after_script:
-  - mvn sonar:sonar
