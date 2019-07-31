@@ -349,8 +349,8 @@ public enum ConfigurationKey {
 
     @Doc({ "The ID of the default tenant for user authentication in SAML_SP mode. ",
            "The value must consist of 8 alphanumeric characters." })
-    @Example("8f96dede")
-    SSO_DEFAULT_TENANT_ID(false, "8f96dede", "string", false, 8L),
+    @Example("default")
+    SSO_DEFAULT_TENANT_ID(false, "default", "string", false, 8L),
 
     @Doc({ "The unique entity ID of the IdP system used for authentication in SAML_SP mode. ", 
            "The ID is used for verifying that the response to an authentication request ",
