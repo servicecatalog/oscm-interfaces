@@ -14,6 +14,6 @@ package org.oscm.internal.types.enumtypes;
  */
 public enum AuthenticationMode {
 
-    INTERNAL, SAML_SP, SAML_IDP, OPENID_RP;
+    INTERNAL, OIDC;
 
 }
