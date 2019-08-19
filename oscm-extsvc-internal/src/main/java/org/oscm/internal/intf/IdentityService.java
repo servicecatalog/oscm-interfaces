@@ -832,7 +832,7 @@ public interface IdentityService {
      * @param tenantId the it of the tenant
      * @return a VOUserDetails object with all user informations
      */
-    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId, String tenantId) {
+    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId, String tenantId, String token) {
         throw new java.lang.UnsupportedOperationException("Please implement ...");
     };
 }
