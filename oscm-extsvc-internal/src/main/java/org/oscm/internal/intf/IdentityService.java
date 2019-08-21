@@ -835,4 +835,15 @@ public interface IdentityService {
     default VOUserDetails loadUserDetailsFromOIDCProvider(String userId, String tenantId, String token) {
         throw new java.lang.UnsupportedOperationException("Please implement ...");
     };
+    
+    
+    /**
+     * load the user details form the open id connect provider
+     * @param token the barertoken
+     * @param tenantId the it of the tenant
+     * @return the groupId
+     */
+    default String createAccessGroupInOIDCProvider(String tenantId, String token) {
+        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    };
 }
