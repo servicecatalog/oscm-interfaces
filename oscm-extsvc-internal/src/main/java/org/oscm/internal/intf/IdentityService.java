@@ -846,4 +846,16 @@ public interface IdentityService {
     default String createAccessGroupInOIDCProvider(String tenantId, String token) {
         throw new java.lang.UnsupportedOperationException("Please implement ...");
     };
+    
+    /**
+     * load the user details form the open id connect provider
+     * @param groupid the groupId of the group where the user should be add
+     * @param token the barertoken
+     * @param tenantId the it of the tenant
+     * @param userInfo the userInfoObject
+     * @return the groupId
+     */
+    default void addMemberToAccessGroupInOIDCProvider(String groupId, String tenantId, String token, VOUserDetails userInfo) {       
+        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    };
 }
