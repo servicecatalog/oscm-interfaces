@@ -1,20 +1,18 @@
 /*******************************************************************************
- *                                                                              
+ *
  *  Copyright FUJITSU LIMITED 2018
- *       
- *  Creation Date: 2009-02-05                                                       
- *                                                                              
+ *
+ *  Creation Date: 2009-02-05
+ *
  *******************************************************************************/
 
 package org.oscm.internal.intf;
 
-import javax.ejb.Remote;
-
-import org.oscm.internal.types.exception.DuplicateEventException;
-import org.oscm.internal.types.exception.ObjectNotFoundException;
-import org.oscm.internal.types.exception.OrganizationAuthoritiesException;
-import org.oscm.internal.types.exception.ValidationException;
+import org.oscm.internal.types.exception.*;
 import org.oscm.internal.vo.VOGatheredEvent;
+
+import javax.ejb.Remote;
+import java.lang.IllegalArgumentException;
 
 /**
  * Remote interface of the event management service.
@@ -29,7 +27,7 @@ public interface EventService {
      * <p>
      * Required role: any user role in the technology provider organization that
      * owns the specified technical service
-     * 
+     *
      * @param technicalServiceId
      *            the ID of the technical service to which the event is related
      * @param instanceId
@@ -52,12 +50,17 @@ public interface EventService {
      * @throws ValidationException
      *             if the actor or the unique ID of the event is longer than 255
      *             characters
+     * @throws  IllegalArgumentException
+     *              if any of the arguments passed to the function is invalid
+     * @throws SaaSSystemException
+     *              if any unexpected exception occurs
      */
 
     public void recordEventForInstance(String technicalServiceId,
             String instanceId, VOGatheredEvent event)
-            throws OrganizationAuthoritiesException, DuplicateEventException,
-            ObjectNotFoundException, ValidationException;
+            throws DuplicateEventException,
+            OrganizationAuthoritiesException, ObjectNotFoundException,
+            ValidationException, IllegalArgumentException, SaaSSystemException;
 
     /**
      * Stores the given event information for the specified subscription in the
@@ -65,14 +68,14 @@ public interface EventService {
      * <p>
      * Required role: any user role in the technology provider organization that
      * owns the technical service underlying to the subscription
-     * 
-     * 
+     *
+     *
      * @param subscriptionKey
      *            the numeric key of the subscription for which to store the
      *            event
      * @param event
      *            the event to be stored
-     * 
+     *
      * @throws DuplicateEventException
      *             if an event with the same unique ID was already stored for
      *             the subscription
@@ -87,11 +90,14 @@ public interface EventService {
      * @throws ValidationException
      *             if the actor or the unique ID of the event is longer than 255
      *             characters
+     * @throws  IllegalArgumentException
+     *              if any of the arguments passed to the function is invalid
+     * @throws SaaSSystemException
+     *              if any unexpected exception occurs
      */
-
     public void recordEventForSubscription(long subscriptionKey,
             VOGatheredEvent event) throws DuplicateEventException,
             OrganizationAuthoritiesException, ObjectNotFoundException,
-            ValidationException;
+            ValidationException, IllegalArgumentException, SaaSSystemException;
 
 }
