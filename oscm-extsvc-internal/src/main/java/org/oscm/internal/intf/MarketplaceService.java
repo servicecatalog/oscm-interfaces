@@ -8,6 +8,7 @@
 
 package org.oscm.internal.intf;
 
+import java.lang.IllegalArgumentException;
 import java.util.List;
 import java.util.Set;
 
@@ -257,7 +258,7 @@ public interface MarketplaceService {
      *             if the marketplace is not found by its ID
      */
 
-    void deleteMarketplace(String marketplaceId) throws ObjectNotFoundException;
+    void deleteMarketplace(String marketplaceId) throws IllegalArgumentException, NonUniqueBusinessKeyException, ObjectNotFoundException;
 
     /**
      * Adds one or more organizations to the list of organizations that are
