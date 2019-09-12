@@ -1,27 +1,26 @@
 /*******************************************************************************
- *                                                                              
+ *
  *  Copyright FUJITSU LIMITED 2018
- *                                                                              
- *  Creation Date: 2009-05-02                                                      
- *                                                                              
+ *
+ *  Creation Date: 2009-05-02
+ *
  *******************************************************************************/
 
 package org.oscm.internal.intf;
-
-import java.lang.IllegalArgumentException;
-import java.util.List;
-import java.util.Set;
-
-import javax.ejb.Remote;
-import javax.security.auth.login.LoginException;
 
 import org.oscm.internal.cache.MarketplaceConfiguration;
 import org.oscm.internal.types.exception.*;
 import org.oscm.internal.vo.*;
 
+import javax.ejb.Remote;
+import javax.security.auth.login.LoginException;
+import java.lang.IllegalArgumentException;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Remote interface of the marketplace management service.
- * 
+ *
  */
 @Remote
 public interface MarketplaceService {
@@ -32,7 +31,7 @@ public interface MarketplaceService {
      * <p>
      * Required role: service manager of a supplier organization, reseller of a
      * reseller organization, or broker of a broker organization
-     * 
+     *
      * @return the list of marketplaces
      */
 
@@ -45,7 +44,7 @@ public interface MarketplaceService {
      * Required role: service manager of the supplier organization that owns the
      * service, or broker or reseller of an authorized broker or reseller
      * organization
-     * 
+     *
      * @param service
      *            the service for which the catalog entries are to be retrieved
      * @return the catalog entries of the marketplaces the given service has
@@ -79,7 +78,7 @@ public interface MarketplaceService {
      * Required role: service manager of the supplier organization that owns the
      * service, or broker or reseller of an authorized broker or reseller
      * organization
-     * 
+     *
      * @param service
      *            the service to be published
      * @param entries
@@ -113,7 +112,7 @@ public interface MarketplaceService {
      * <code>null</code>.
      * <p>
      * Required role: any user role in an organization
-     * 
+     *
      * @param subscriptionKey
      *            the numeric key of the subscription
      * @param locale
@@ -137,7 +136,7 @@ public interface MarketplaceService {
      * <p>
      * Required role: marketplace manager of a marketplace owner organization or
      * operator of the platform operator organization
-     * 
+     *
      * @return the list of marketplaces
      */
 
@@ -148,7 +147,7 @@ public interface MarketplaceService {
      * operator can add, change, and remove marketplace owners.
      * <p>
      * Required role: operator of the platform operator organization
-     * 
+     *
      * @return the list of marketplaces
      */
 
@@ -157,7 +156,7 @@ public interface MarketplaceService {
     /**
      * Returns a list of the marketplaces that are accessible for the
      * organization of the calling user.
-     * 
+     *
      * @return the list of marketplaces that are accessible for the organization
      *         of the calling user
      */
@@ -175,7 +174,7 @@ public interface MarketplaceService {
      * Required role: marketplace manager of the marketplace owner organization
      * to change the name; operator of the platform operator organization to
      * change the marketplace owner
-     * 
+     *
      * @param marketplace
      *            the value object specifying the marketplace and the data to be
      *            stored
@@ -217,12 +216,12 @@ public interface MarketplaceService {
      * ignored. The method itself generates a unique ID for the new marketplace.
      * <p>
      * Required role: operator of the platform operator organization
-     * 
+     *
      * @param marketplace
      *            the value object specifying the marketplace and the data to be
      *            stored
      * @return a value object with the stored marketplace definition
-     * 
+     *
      * @throws OperationNotPermittedException
      *             if the calling user does not have the required permissions
      * @throws ObjectNotFoundException
@@ -241,24 +240,26 @@ public interface MarketplaceService {
             ValidationException, UserRoleAssignmentException,
             MarketplaceValidationException;
 
-    /**
-     * Deletes a marketplace.
-     * <p>
-     * The deletion is rejected if active services are published on the
-     * marketplace. When the last marketplace of the owning organization is
-     * deleted, the marketplace owner role is automatically removed from the
-     * organization, and the marketplace manager role is removed from the
-     * organization's users.
-     * <p>
-     * Required role: operator of the platform operator organization
-     * 
-     * @param marketplaceId
-     *            the ID of the marketplace
-     * @throws ObjectNotFoundException
-     *             if the marketplace is not found by its ID
-     */
-
-    void deleteMarketplace(String marketplaceId) throws IllegalArgumentException, NonUniqueBusinessKeyException, ObjectNotFoundException;
+  /**
+   * Deletes a marketplace.
+   *
+   * <p>The deletion is rejected if active services are published on the marketplace. When the last
+   * marketplace of the owning organization is deleted, the marketplace owner role is automatically
+   * removed from the organization, and the marketplace manager role is removed from the
+   * organization's users.
+   *
+   * <p>Required role: operator of the platform operator organization
+   *
+   * @param marketplaceId the ID of the marketplace
+   * @throws IllegalArgumentException
+   *            if argument validation fails
+   * @throws ObjectNotFoundException
+   *            if the marketplace is not found by its ID
+   * @throws NonUniqueBusinessKeyException
+   *            if the marketplace with the same business key already exists in the database
+   */
+  void deleteMarketplace(String marketplaceId)
+      throws IllegalArgumentException, ObjectNotFoundException, NonUniqueBusinessKeyException;
 
     /**
      * Adds one or more organizations to the list of organizations that are
@@ -268,7 +269,7 @@ public interface MarketplaceService {
      * not open to any supplier, broker, and reseller.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param organizationIds
      *            the IDs of the supplier, broker, and reseller organizations to
      *            be added to the marketplace
@@ -304,7 +305,7 @@ public interface MarketplaceService {
      * supplier, broker, and reseller.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param organizationIds
      *            the IDs of the supplier, broker, and reseller organizations to
      *            be banned from the marketplace
@@ -339,7 +340,7 @@ public interface MarketplaceService {
      * not open to any supplier, broker, and reseller.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param organizationIds
      *            the IDs of the supplier, broker, and reseller organizations to
      *            be removed from the marketplace
@@ -372,7 +373,7 @@ public interface MarketplaceService {
      * supplier, broker, and reseller.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param organizationIds
      *            the IDs of the supplier, broker, and reseller organizations to
      *            be removed from the black list for the marketplace
@@ -404,7 +405,7 @@ public interface MarketplaceService {
      * supplier, broker, and reseller.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param marketplaceId
      *            the ID of the marketplace
      * @return the list of supplier, broker, and reseller organizations
@@ -430,7 +431,7 @@ public interface MarketplaceService {
      * not open to any supplier, broker, and reseller.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param marketplaceId
      *            the ID of the marketplace
      * @return the list of supplier, broker, and reseller organizations
@@ -453,12 +454,12 @@ public interface MarketplaceService {
      * whether a marketplace with the given ID exists.
      * <p>
      * Required role: none
-     * 
+     *
      * @param marketplaceId
      *            the ID of the marketplace
      * @throws ObjectNotFoundException
      *             if the marketplace is not found
-     * 
+     *
      * @return a value object with the marketplace definition
      */
 
@@ -470,7 +471,7 @@ public interface MarketplaceService {
      * the specified marketplace.
      * <p>
      * Required role: none
-     * 
+     *
      * @param marketplaceId
      *            the ID of the marketplace; must not be <code>null</code> or
      *            consist of blanks only
@@ -487,7 +488,7 @@ public interface MarketplaceService {
      * specified marketplace.
      * <p>
      * Required role: marketplace manager of the marketplace owner organization
-     * 
+     *
      * @param marketplace
      *            the value object identifying the marketplace to save the URL
      *            for; must not be <code>null</code>
@@ -569,7 +570,7 @@ public interface MarketplaceService {
     /**
      * Retrieves all restricted marketplaces to which the calling user's
      * organization have an access.
-     * 
+     *
      * @return the list of marketplaces
      */
     List<VOMarketplace> getRestrictedMarketplaces();
@@ -589,7 +590,7 @@ public interface MarketplaceService {
     /**
      * Returns all organizations which have access to the marketplace with the
      * given id if the marketplace is restricted.
-     * 
+     *
      * @param marketplaceId
      *            the marketplace id
      * @return the list of organizations or empty list if not restricted
@@ -600,7 +601,7 @@ public interface MarketplaceService {
     /**
      * Gets the cached version of the marketplace with allowed organizations (if
      * it is restricted) for the marketplace with the given id.
-     * 
+     *
      * @param marketplaceId
      *            the marketplace id
      * @return the configuration or null if marketplace id is invalid
@@ -611,7 +612,7 @@ public interface MarketplaceService {
     /**
      * Clears the cache from the configuration of the marketplace with the given
      * id.
-     * 
+     *
      * @param marketplaceId
      *            the marketplace id
      */
@@ -633,7 +634,7 @@ public interface MarketplaceService {
     /**
      * Gets all organizations with the supplier role that can publish on the
      * given marketplace.
-     * 
+     *
      * @param marketplaceId
      *            the id of the marketplace
      * @return list of suppliers
