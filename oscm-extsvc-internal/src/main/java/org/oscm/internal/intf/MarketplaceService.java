@@ -242,12 +242,10 @@ public interface MarketplaceService {
 
   /**
    * Deletes a marketplace.
-   *
    * <p>The deletion is rejected if active services are published on the marketplace. When the last
    * marketplace of the owning organization is deleted, the marketplace owner role is automatically
    * removed from the organization, and the marketplace manager role is removed from the
    * organization's users.
-   *
    * <p>Required role: operator of the platform operator organization
    *
    * @param marketplaceId the ID of the marketplace
