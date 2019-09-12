@@ -8,6 +8,12 @@
 
 package org.oscm.internal.intf;
 
+import java.util.List;
+import java.util.Set;
+
+import javax.ejb.Remote;
+import javax.security.auth.login.LoginException;
+
 import org.oscm.internal.cache.MarketplaceConfiguration;
 import org.oscm.internal.types.exception.*;
 import org.oscm.internal.vo.*;
@@ -240,24 +246,24 @@ public interface MarketplaceService {
             ValidationException, UserRoleAssignmentException,
             MarketplaceValidationException;
 
-  /**
-   * Deletes a marketplace.
-   * <p>The deletion is rejected if active services are published on the marketplace. When the last
-   * marketplace of the owning organization is deleted, the marketplace owner role is automatically
-   * removed from the organization, and the marketplace manager role is removed from the
-   * organization's users.
-   * <p>Required role: operator of the platform operator organization
-   *
-   * @param marketplaceId the ID of the marketplace
-   * @throws IllegalArgumentException
-   *            if argument validation fails
-   * @throws ObjectNotFoundException
-   *            if the marketplace is not found by its ID
-   * @throws NonUniqueBusinessKeyException
-   *            if the marketplace with the same business key already exists in the database
-   */
-  void deleteMarketplace(String marketplaceId)
-      throws IllegalArgumentException, ObjectNotFoundException, NonUniqueBusinessKeyException;
+    /**
+     * Deletes a marketplace.
+     * <p>
+     * The deletion is rejected if active services are published on the
+     * marketplace. When the last marketplace of the owning organization is
+     * deleted, the marketplace owner role is automatically removed from the
+     * organization, and the marketplace manager role is removed from the
+     * organization's users.
+     * <p>
+     * Required role: operator of the platform operator organization
+     * 
+     * @param marketplaceId
+     *            the ID of the marketplace
+     * @throws ObjectNotFoundException
+     *             if the marketplace is not found by its ID
+     */
+
+    void deleteMarketplace(String marketplaceId) throws ObjectNotFoundException;
 
     /**
      * Adds one or more organizations to the list of organizations that are
