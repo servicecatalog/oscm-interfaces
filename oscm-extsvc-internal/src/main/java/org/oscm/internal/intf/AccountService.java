@@ -11,7 +11,6 @@ package org.oscm.internal.intf;
 import java.util.List;
 import java.util.Set;
 
-import javax.ejb.EJBException;
 import javax.ejb.Remote;
 
 import org.oscm.internal.types.enumtypes.PerformanceHint;

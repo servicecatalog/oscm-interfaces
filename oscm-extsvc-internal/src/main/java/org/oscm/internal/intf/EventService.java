@@ -13,7 +13,7 @@ import org.oscm.internal.types.exception.*;
 import org.oscm.internal.vo.VOGatheredEvent;
 
 import javax.ejb.Remote;
-import java.lang.IllegalArgumentException;
+import org.oscm.internal.types.exception.IllegalArgumentException;
 
 /** Remote interface of the event management service. */
 @Remote

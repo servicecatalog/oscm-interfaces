@@ -15,14 +15,24 @@ import javax.ejb.Remote;
 import javax.security.auth.login.LoginException;
 
 import org.oscm.internal.cache.MarketplaceConfiguration;
-import org.oscm.internal.types.exception.*;
-import org.oscm.internal.vo.*;
-
-import javax.ejb.Remote;
-import javax.security.auth.login.LoginException;
-import java.lang.IllegalArgumentException;
-import java.util.List;
-import java.util.Set;
+import org.oscm.internal.types.exception.ConcurrentModificationException;
+import org.oscm.internal.types.exception.MarketplaceAccessTypeUneligibleForOperationException;
+import org.oscm.internal.types.exception.MarketplaceValidationException;
+import org.oscm.internal.types.exception.NonUniqueBusinessKeyException;
+import org.oscm.internal.types.exception.ObjectNotFoundException;
+import org.oscm.internal.types.exception.OperationNotPermittedException;
+import org.oscm.internal.types.exception.OrganizationAlreadyBannedException;
+import org.oscm.internal.types.exception.OrganizationAlreadyExistsException;
+import org.oscm.internal.types.exception.OrganizationAuthorityException;
+import org.oscm.internal.types.exception.TechnicalServiceNotAliveException;
+import org.oscm.internal.types.exception.TechnicalServiceOperationException;
+import org.oscm.internal.types.exception.UserRoleAssignmentException;
+import org.oscm.internal.types.exception.ValidationException;
+import org.oscm.internal.vo.VOCatalogEntry;
+import org.oscm.internal.vo.VOMarketplace;
+import org.oscm.internal.vo.VOOrganization;
+import org.oscm.internal.vo.VOService;
+import org.oscm.internal.vo.VOServiceDetails;
 
 /**
  * Remote interface of the marketplace management service.
