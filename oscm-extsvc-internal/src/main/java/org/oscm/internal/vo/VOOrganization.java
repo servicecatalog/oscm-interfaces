@@ -22,6 +22,12 @@ public class VOOrganization extends BaseVO {
      * (business key).
      */
     private String organizationId;
+    
+    
+    /**
+     * The access group (optional).
+     */
+    private String oidcGroupId;
 
     /**
      * The organization's address as free text (city, street, country, ZIP code
@@ -424,5 +430,14 @@ public class VOOrganization extends BaseVO {
 
     public void setTenantKey(long tenantKey) {
         this.tenantKey = tenantKey;
+    }
+    
+
+    public String getOidcGroupId() {
+        return oidcGroupId;
+    }
+
+    public void setOidcGroupId(String oidcGroupId) {
+        this.oidcGroupId = oidcGroupId;
     }
 }
