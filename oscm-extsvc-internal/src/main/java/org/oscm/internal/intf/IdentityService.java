@@ -23,6 +23,7 @@ import org.oscm.internal.types.exception.ObjectNotFoundException;
 import org.oscm.internal.types.exception.OperationNotPermittedException;
 import org.oscm.internal.types.exception.OperationPendingException;
 import org.oscm.internal.types.exception.OrganizationRemovedException;
+import org.oscm.internal.types.exception.RegistrationException;
 import org.oscm.internal.types.exception.SecurityCheckException;
 import org.oscm.internal.types.exception.TechnicalServiceNotAliveException;
 import org.oscm.internal.types.exception.TechnicalServiceOperationException;
@@ -49,7 +50,8 @@ public interface IdentityService {
      * <br>
      * 
      * User ID (mandatory), Email (mandatory), Language, Locale (mandatory),
-     * Title ("MR" or "MS"), First name, Last name, One or several user roles<br>
+     * Title ("MR" or "MS"), First name, Last name, One or several user
+     * roles<br>
      * <br>
      * 
      * As first and last name may contain a comma and multiple roles are also
@@ -59,7 +61,8 @@ public interface IdentityService {
      * quotes.<br>
      * <br>
      * 
-     * Sample for users to be imported to a technology provider organization:<br>
+     * Sample for users to be imported to a technology provider
+     * organization:<br>
      * <br>
      * 
      * "user1,user1@org.com,en,MR,"John","Doe","ORGANIZATION_ADMIN,
@@ -89,7 +92,8 @@ public interface IdentityService {
      * <br>
      * 
      * User ID (mandatory), Email (mandatory), Language, Locale (mandatory),
-     * Title ("MR" or "MS"), First name, Last name, One or several user roles<br>
+     * Title ("MR" or "MS"), First name, Last name, One or several user
+     * roles<br>
      * <br>
      * 
      * As first and last name may contain a comma and multiple roles are also
@@ -99,7 +103,8 @@ public interface IdentityService {
      * quotes.<br>
      * <br>
      * 
-     * Sample for users to be imported to a technology provider organization:<br>
+     * Sample for users to be imported to a technology provider
+     * organization:<br>
      * <br>
      * 
      * "user1,user1@org.com,en,MR,"John","Doe","ORGANIZATION_ADMIN,
@@ -165,7 +170,8 @@ public interface IdentityService {
      * @throws OperationNotPermittedException
      *             if the specified user is not a member of the calling user's
      *             organization
-     * @throws OperationNotPermittedException if the operation was not permitted            
+     * @throws OperationNotPermittedException
+     *             if the operation was not permitted
      */
 
     public VOUserDetails getUserDetails(VOUser user)
@@ -409,9 +415,9 @@ public interface IdentityService {
      */
 
     public void revokeUserRoles(VOUser user, List<UserRoleType> roles)
-            throws ObjectNotFoundException,
-            UserModificationConstraintException, UserActiveException,
-            OperationNotPermittedException, UserRoleAssignmentException;
+            throws ObjectNotFoundException, UserModificationConstraintException,
+            UserActiveException, OperationNotPermittedException,
+            UserRoleAssignmentException;
 
     /**
      * Retrieves the users that are registered for the calling user's
@@ -790,13 +796,15 @@ public interface IdentityService {
 
     /**
      * Assigns the given role to the specified user. If the user already has
-     * this role or the given role is not related to administrator's units, the method has no effect.
+     * this role or the given role is not related to administrator's units, the
+     * method has no effect.
      * <p>
-     * Required role: administrator of the user's organization or unit administrator
+     * Required role: administrator of the user's organization or unit
+     * administrator
      * 
      * @param user
-     *            the value object specifying the user to whom the role is to
-     *            be assigned
+     *            the value object specifying the user to whom the role is to be
+     *            assigned
      * @param role
      *            the role to be set
      * @throws ObjectNotFoundException
@@ -810,9 +818,11 @@ public interface IdentityService {
 
     /**
      * Removes the given role from the specified user. If the user already has
-     * this role or the given role is not related to administrator's units, the method has no effect.
+     * this role or the given role is not related to administrator's units, the
+     * method has no effect.
      * <p>
-     * Required role: administrator of the user's organization or unit administrator
+     * Required role: administrator of the user's organization or unit
+     * administrator
      * 
      * @param user
      *            the value object specifying the user from which the roles are
@@ -826,36 +836,57 @@ public interface IdentityService {
      */
     void revokeUnitRole(VOUser user, UserRoleType role)
             throws ObjectNotFoundException, OperationNotPermittedException;
+
     /**
      * load the user details form the open id connect provider
-     * @param userId the id of the user
-     * @param tenantId the it of the tenant
+     * 
+     * @param userId
+     *            the id of the user
+     * @param tenantId
+     *            the it of the tenant
      * @return a VOUserDetails object with all user informations
+     * @throws RegistrationException when a error occurs when the oidc provider is called
      */
-    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId, String tenantId, String token) {
-        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId,
+            String tenantId, String token) throws RegistrationException {
+        throw new java.lang.UnsupportedOperationException(
+                "Please implement ...");
     };
-    
-    
+
     /**
      * load the user details form the open id connect provider
-     * @param token the barertoken
-     * @param tenantId the it of the tenant
+     * 
+     * @param token
+     *            the barertoken
+     * @param tenantId
+     *            the it of the tenant
      * @return the groupId
+     * @throws RegistrationException when a error occurs when the oidc provider is called
      */
-    default String createAccessGroupInOIDCProvider(String tenantId, String token) {
-        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    default String createAccessGroupInOIDCProvider(String tenantId,
+            String token) throws RegistrationException {
+        throw new java.lang.UnsupportedOperationException(
+                "Please implement ...");
     };
-    
+
     /**
      * load the user details form the open id connect provider
-     * @param groupid the groupId of the group where the user should be add
-     * @param token the barertoken
-     * @param tenantId the it of the tenant
-     * @param userInfo the userInfoObject
+     * 
+     * @param groupid
+     *            the groupId of the group where the user should be add
+     * @param token
+     *            the barertoken
+     * @param tenantId
+     *            the it of the tenant
+     * @param userInfo
+     *            the userInfoObject
      * @return the groupId
+     * @throws RegistrationException when a error occurs when the oidc provider is called
      */
-    default void addMemberToAccessGroupInOIDCProvider(String groupId, String tenantId, String token, VOUserDetails userInfo) {       
-        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    default void addMemberToAccessGroupInOIDCProvider(String groupId,
+            String tenantId, String token, VOUserDetails userInfo)
+            throws RegistrationException {
+        throw new java.lang.UnsupportedOperationException(
+                "Please implement ...");
     };
 }
