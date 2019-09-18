@@ -860,11 +860,13 @@ public interface IdentityService {
      *            the barertoken
      * @param tenantId
      *            the it of the tenant
+     * @param groupName
+     *            the name of the group. Usually it´s the creaded users name           
      * @return the groupId
      * @throws RegistrationException when a error occurs when the oidc provider is called
      */
     default String createAccessGroupInOIDCProvider(String tenantId,
-            String token) throws RegistrationException {
+            String token, String groupName) throws RegistrationException {
         throw new java.lang.UnsupportedOperationException(
                 "Please implement ...");
     };
