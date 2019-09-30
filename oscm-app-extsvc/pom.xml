@@ -30,8 +30,7 @@
           <doclint>none</doclint>
           <reportOutputDirectory>${project.reporting.outputDirectory}/target/javadoc</reportOutputDirectory>
           <destDir>target/javadoc</destDir>
-        </configuration>
-        
+        </configuration>      
         <executions>
           <execution>
             <id>attach-javadocs</id>
