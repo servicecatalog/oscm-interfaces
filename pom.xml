@@ -77,12 +77,12 @@
                        <doclint>none</doclint>
                     </configuration>
 					<executions>
-						<execution>
-							<id>attach-javadocs</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
+					   <execution>
+					      <id>attach-javadocs</id>
+						  <goals>
+						    <goal>jar</goal>
+						  </goals>
+					   </execution>
 					</executions>
 				</plugin>
 
@@ -115,33 +115,7 @@
 						</dependency>
 					</dependencies>
 				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.0.1</version>
-					<configuration>
-						<reportPlugins>
-							<plugin>
-								<groupId>org.apache.maven.plugins</groupId>
-								<artifactId>maven-javadoc-plugin</artifactId>
-								<configuration>
-									<doclint>none</doclint>
-								</configuration>
-							</plugin>
-						</reportPlugins>
-					</configuration>
-					<executions>
-						<execution>
-							<configuration>
-								<additionalparam>${javadoc.opts}</additionalparam>
-							</configuration>
-							<phase>site</phase>
-						</execution>
-					</executions>
-				</plugin>
-
-			</plugins>
+ 			</plugins>
 		</pluginManagement>
 	</build>
 

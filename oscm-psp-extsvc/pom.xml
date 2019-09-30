@@ -69,6 +69,12 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <doclint>none</doclint>
+          <reportOutputDirectory>${project.reporting.outputDirectory}/target/javadoc</reportOutputDirectory>
+          <destDir>target/javadoc</destDir>
+        </configuration>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -81,6 +87,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+         <version>3.0.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
