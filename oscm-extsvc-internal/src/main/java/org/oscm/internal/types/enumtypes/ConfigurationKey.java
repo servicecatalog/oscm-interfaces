@@ -265,6 +265,10 @@ public enum ConfigurationKey {
     @Doc({ "The offset of the timer for removing inactive on-behalf users.",
             "The offset is in milliseconds, based on January 1, 00:00." })
     TIMER_INTERVAL_INACTIVE_ON_BEHALF_USERS_OFFSET(false, "0", "long", Long.valueOf(0L), null, false),
+    
+    @Doc({ "The offset of the timer for synchronizing users with the OIDC provider.",
+        "The offset is in milliseconds, based on January 1, 00:00." })
+    TIMER_INTERVAL_SYNCHRONIZE_USERS_OFFSET(false, "0", "long", Long.valueOf(0L), null, false),
 
     @Doc({ "Defines the timeout for outgoing JAX-WS calls. After the time intervall is passed a timeout exception is thrown by the JAX-WS framework." })
     @Example("30000")
