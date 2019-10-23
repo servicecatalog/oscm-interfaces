@@ -848,7 +848,7 @@ public interface IdentityService {
      * @throws RegistrationException when a error occurs when the oidc provider is called
      */
     default VOUserDetails loadUserDetailsFromOIDCProvider(String userId,
-            String tenantId, String token) throws RegistrationException {
+            String tenantId) throws RegistrationException {
         throw new java.lang.UnsupportedOperationException(
                 "Please implement ...");
     };
@@ -866,7 +866,7 @@ public interface IdentityService {
      * @throws RegistrationException when a error occurs when the oidc provider is called
      */
     default String createAccessGroupInOIDCProvider(String tenantId,
-            String token, String groupName) throws RegistrationException {
+             String groupName) throws RegistrationException {
         throw new java.lang.UnsupportedOperationException(
                 "Please implement ...");
     };
@@ -886,7 +886,7 @@ public interface IdentityService {
      * @throws RegistrationException when a error occurs when the oidc provider is called
      */
     default void addMemberToAccessGroupInOIDCProvider(String groupId,
-            String tenantId, String token, VOUserDetails userInfo)
+            String tenantId, VOUserDetails userInfo)
             throws RegistrationException {
         throw new java.lang.UnsupportedOperationException(
                 "Please implement ...");
