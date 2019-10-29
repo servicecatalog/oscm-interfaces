@@ -309,7 +309,9 @@ public interface APPlatformService {
      * Checks if current authentication mode is SSO related
      * @return false in case auth mode is INTERNAL, true in case auth mode is OIDC
      */
-    default boolean isSsoMode(){return false;}
+    default boolean isSsoMode() throws ConfigurationException {
+        return false;
+    }
 
 
 }
