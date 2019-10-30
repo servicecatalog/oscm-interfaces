@@ -63,7 +63,7 @@ public class BSSWebServiceFactory {
     }
 
     private static void setBinding(BindingProvider client, String userName,
-                                   String password) {
+                                   String password) throws ConfigurationException {
 
         boolean isSsoMode = APPlatformServiceFactory.getInstance().isSsoMode();
 
