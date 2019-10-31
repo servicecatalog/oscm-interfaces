@@ -305,5 +305,13 @@ public interface APPlatformService {
      */
     default void updateUserCredentials(long userKey, String username, String password) {}
 
+    /**
+     * Checks if current authentication mode is SSO related
+     * @return false in case auth mode is INTERNAL, true in case auth mode is OIDC
+     */
+    default boolean isSsoMode() throws ConfigurationException {
+        return false;
+    }
+
 
 }
