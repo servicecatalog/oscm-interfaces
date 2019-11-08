@@ -121,17 +121,18 @@ public class RegistrationException extends SaaSApplicationException {
         /**
          * A user is already member of another organization. This reason is only valid for SSO mode.
          */
-        BAD_REQUEST,
+        ALREADY_ORG_MEMBER,
 
         /**
          * The user to register does not exist. This reason is only valid for SSO mode.
          */
-        NOT_FOUND,
+        USER_NOT_EXIST,
         
         /**
          * A unexpected error occurs during the registration process. This reason is only valid for SSO mode. 
          */
         OIDC_ERROR
+
 
     }
 
