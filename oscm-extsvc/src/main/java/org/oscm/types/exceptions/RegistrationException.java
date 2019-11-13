@@ -119,7 +119,22 @@ public class RegistrationException extends SaaSApplicationException {
         /**
          * A user tries to register but is not allowed to do so.
          */
-        SELFREGISTRATION_NOT_ALLOWED
+        SELFREGISTRATION_NOT_ALLOWED,
+        
+        /**
+         * A user is already member of another organization. This reason is only valid for SSO mode.
+         */
+        ALREADY_ORG_MEMBER,
+
+        /**
+         * The user to register does not exist. This reason is only valid for SSO mode.
+         */
+        USER_NOT_EXIST,
+        
+        /**
+         * A unexpected error occurs during the registration process. This reason is only valid for SSO mode. 
+         */
+        OIDC_ERROR
 
     }
 

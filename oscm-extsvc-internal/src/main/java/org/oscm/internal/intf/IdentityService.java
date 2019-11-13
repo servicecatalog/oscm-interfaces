@@ -838,7 +838,7 @@ public interface IdentityService {
             throws ObjectNotFoundException, OperationNotPermittedException;
 
     /**
-     * load the user details form the open id connect provider
+     * Load the user details form the open id connect provider. 
      * 
      * @param userId
      *            the id of the user
@@ -854,30 +854,31 @@ public interface IdentityService {
     };
 
     /**
-     * load the user details form the open id connect provider
+     * Creates an access group in the OIDC provider. An OIDC access group
+     * corresponds to an OSCM organization. If the access group already exists,
+     * no new one will be created, but the existing one will be returned.
      * 
-     * @param token
-     *            the barertoken
      * @param tenantId
      *            the it of the tenant
      * @param groupName
-     *            the name of the group. Usually it´s the creaded users name           
+     *            the name of the group. Usually it is the creaded users name
      * @return the groupId
-     * @throws RegistrationException when a error occurs when the oidc provider is called
+     * @throws RegistrationException
+     *             when a error occurs when the oidc provider is called
      */
     default String createAccessGroupInOIDCProvider(String tenantId,
-             String groupName) throws RegistrationException {
+            String groupName) throws RegistrationException {
         throw new java.lang.UnsupportedOperationException(
                 "Please implement ...");
     };
 
     /**
-     * load the user details form the open id connect provider
+     * Add a user to a group. An OIDC access group
+     * corresponds to an OSCM organization. If the given User belongs already to a OIDC group
+     * an exception is thrown. 
      * 
      * @param groupid
      *            the groupId of the group where the user should be add
-     * @param token
-     *            the barertoken
      * @param tenantId
      *            the it of the tenant
      * @param userInfo
