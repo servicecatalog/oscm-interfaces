@@ -132,6 +132,11 @@ public class RegistrationException extends SaaSApplicationException {
         USER_NOT_EXIST,
         
         /**
+         * The user to register does not have the sufficient permissions. This reason is only valid for SSO mode.
+         */
+        USER_INSUFFICIENT_PERMISSIONS,
+        
+        /**
          * A unexpected error occurs during the registration process. This reason is only valid for SSO mode. 
          */
         OIDC_ERROR
