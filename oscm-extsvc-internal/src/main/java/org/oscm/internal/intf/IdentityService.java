@@ -80,9 +80,8 @@ public interface IdentityService {
      *             if the given organization or marketplace does not exist
      * @throws IllegalArgumentException
      */
-    public void importUsersInOwnOrganization(byte[] csvData,
-            String marketplaceId) throws BulkUserImportException,
-            ObjectNotFoundException, IllegalArgumentException;
+    public void importUsersInOwnOrganization(byte[] csvData, String marketplaceId)
+            throws BulkUserImportException, ObjectNotFoundException, IllegalArgumentException;
 
     /**
      * The platform operator can import multiple users to given organization
@@ -125,9 +124,8 @@ public interface IdentityService {
      *             if the given organization or marketplace does not exist
      * @throws IllegalArgumentException
      */
-    public void importUsers(byte[] csvData, String organizationId,
-            String marketplaceId) throws BulkUserImportException,
-            ObjectNotFoundException, IllegalArgumentException;
+    public void importUsers(byte[] csvData, String organizationId, String marketplaceId)
+            throws BulkUserImportException, ObjectNotFoundException, IllegalArgumentException;
 
     /**
      * Informs the services on whether a login attempt of a user succeeded. If
@@ -153,8 +151,7 @@ public interface IdentityService {
      */
 
     public void notifyOnLoginAttempt(VOUser user, boolean attemptSuccessful)
-            throws ObjectNotFoundException, SecurityCheckException,
-            ValidationException;
+            throws ObjectNotFoundException, SecurityCheckException, ValidationException;
 
     /**
      * Retrieves detailed information on the specified user.
@@ -208,11 +205,9 @@ public interface IdentityService {
      *             pending
      */
 
-    public VOUserDetails createUser(VOUserDetails user,
-            List<UserRoleType> roles, String marketplaceId)
-            throws NonUniqueBusinessKeyException, MailOperationException,
-            ValidationException, UserRoleAssignmentException,
-            OperationPendingException;
+    public VOUserDetails createUser(VOUserDetails user, List<UserRoleType> roles,
+            String marketplaceId) throws NonUniqueBusinessKeyException, MailOperationException,
+            ValidationException, UserRoleAssignmentException, OperationPendingException;
 
     /**
      * Changes the password of the calling user. For verification, the old
@@ -272,8 +267,7 @@ public interface IdentityService {
      */
 
     public void confirmAccount(VOUser user, String marketplaceId)
-            throws OperationNotPermittedException, ObjectNotFoundException,
-            MailOperationException;
+            throws OperationNotPermittedException, ObjectNotFoundException, MailOperationException;
 
     /**
      * Returns the roles that can be assigned to the specified user.
@@ -348,8 +342,7 @@ public interface IdentityService {
 
     public void setUserRoles(VOUser user, List<UserRoleType> roles)
             throws ObjectNotFoundException, OperationNotPermittedException,
-            UserModificationConstraintException, UserRoleAssignmentException,
-            UserActiveException;
+            UserModificationConstraintException, UserRoleAssignmentException, UserActiveException;
 
     /**
      * Removes the specified user from the calling user's organization. The user
@@ -386,8 +379,7 @@ public interface IdentityService {
     public void deleteUser(VOUser user, String marketplaceId)
             throws UserDeletionConstraintException, ObjectNotFoundException,
             ConcurrentModificationException, OperationNotPermittedException,
-            TechnicalServiceNotAliveException,
-            TechnicalServiceOperationException;
+            TechnicalServiceNotAliveException, TechnicalServiceOperationException;
 
     /**
      * Removes the given roles from the specified user. Different roles assigned
@@ -416,8 +408,7 @@ public interface IdentityService {
 
     public void revokeUserRoles(VOUser user, List<UserRoleType> roles)
             throws ObjectNotFoundException, UserModificationConstraintException,
-            UserActiveException, OperationNotPermittedException,
-            UserRoleAssignmentException;
+            UserActiveException, OperationNotPermittedException, UserRoleAssignmentException;
 
     /**
      * Retrieves the users that are registered for the calling user's
@@ -460,9 +451,9 @@ public interface IdentityService {
      *             user in the time between reading and writing it
      */
 
-    public void lockUserAccount(VOUser user, UserAccountStatus newStatus,
-            String marketplaceId) throws OperationNotPermittedException,
-            ObjectNotFoundException, ConcurrentModificationException;
+    public void lockUserAccount(VOUser user, UserAccountStatus newStatus, String marketplaceId)
+            throws OperationNotPermittedException, ObjectNotFoundException,
+            ConcurrentModificationException;
 
     /**
      * Updates the data stored for the calling user, except for
@@ -491,9 +482,8 @@ public interface IdentityService {
      */
 
     public VOUserDetails updateUser(VOUserDetails user)
-            throws OperationNotPermittedException, ObjectNotFoundException,
-            ValidationException, NonUniqueBusinessKeyException,
-            TechnicalServiceNotAliveException,
+            throws OperationNotPermittedException, ObjectNotFoundException, ValidationException,
+            NonUniqueBusinessKeyException, TechnicalServiceNotAliveException,
             TechnicalServiceOperationException, ConcurrentModificationException;
 
     /**
@@ -530,9 +520,8 @@ public interface IdentityService {
      */
 
     public void requestResetOfUserPassword(VOUser user, String marketplaceId)
-            throws MailOperationException, ObjectNotFoundException,
-            OperationNotPermittedException, UserActiveException,
-            ConcurrentModificationException;
+            throws MailOperationException, ObjectNotFoundException, OperationNotPermittedException,
+            UserActiveException, ConcurrentModificationException;
 
     /**
      * Unlocks the account of the given user and sets its status to
@@ -563,9 +552,8 @@ public interface IdentityService {
      *             user in the time between reading and writing it
      */
 
-    public void unlockUserAccount(VOUser user, String marketplaceId)
-            throws ObjectNotFoundException, OperationNotPermittedException,
-            ConcurrentModificationException;
+    public void unlockUserAccount(VOUser user, String marketplaceId) throws ObjectNotFoundException,
+            OperationNotPermittedException, ConcurrentModificationException;
 
     /**
      * Retrieves the user with the ID specified in the <code>VOUser</code>
@@ -643,8 +631,7 @@ public interface IdentityService {
      *             if a mandatory LDAP parameter cannot be resolved
      */
 
-    public List<VOUserDetails> searchLdapUsers(String userIdPattern)
-            throws ValidationException;
+    public List<VOUserDetails> searchLdapUsers(String userIdPattern) throws ValidationException;
 
     /**
      * Creates a user in the calling user's organization for each of the given
@@ -673,8 +660,7 @@ public interface IdentityService {
      */
 
     public void importLdapUsers(List<VOUserDetails> users, String marketplaceId)
-            throws NonUniqueBusinessKeyException, ValidationException,
-            MailOperationException;
+            throws NonUniqueBusinessKeyException, ValidationException, MailOperationException;
 
     /**
      * Creates a user with the given password in the specified organization. An
@@ -708,9 +694,9 @@ public interface IdentityService {
      *             if the generated user ID is already in use
      */
 
-    public VOUserDetails createOnBehalfUser(String organizationId,
-            String password) throws ObjectNotFoundException,
-            OperationNotPermittedException, NonUniqueBusinessKeyException;
+    public VOUserDetails createOnBehalfUser(String organizationId, String password)
+            throws ObjectNotFoundException, OperationNotPermittedException,
+            NonUniqueBusinessKeyException;
 
     /**
      * Deletes the current user if it is an on-behalf user. If the current user
@@ -773,10 +759,9 @@ public interface IdentityService {
      *             if a user key is not unique
      * 
      */
-    public boolean addRevokeUserUnitAssignment(String unitName,
-            List<VOUser> usersToBeAdded, List<VOUser> usersToBeRevoked)
-            throws ObjectNotFoundException, OperationNotPermittedException,
-            MailOperationException, NonUniqueBusinessKeyException;
+    public boolean addRevokeUserUnitAssignment(String unitName, List<VOUser> usersToBeAdded,
+            List<VOUser> usersToBeRevoked) throws ObjectNotFoundException,
+            OperationNotPermittedException, MailOperationException, NonUniqueBusinessKeyException;
 
     /**
      * Searches the configured remote LDAP system for users if more than search
@@ -791,8 +776,7 @@ public interface IdentityService {
      * @throws ValidationException
      *             if a mandatory LDAP parameter cannot be resolved
      */
-    boolean searchLdapUsersOverLimit(String userIdPattern)
-            throws ValidationException;
+    boolean searchLdapUsersOverLimit(String userIdPattern) throws ValidationException;
 
     /**
      * Assigns the given role to the specified user. If the user already has
@@ -838,45 +822,63 @@ public interface IdentityService {
             throws ObjectNotFoundException, OperationNotPermittedException;
 
     /**
-     * Load the user details form the open id connect provider. 
+     * Load the user details form the open id connect provider.
      * 
      * @param userId
      *            the id of the user
      * @param tenantId
      *            the it of the tenant
      * @return a VOUserDetails object with all user informations
-     * @throws RegistrationException when a error occurs when the oidc provider is called
-     */
-    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId,
-            String tenantId) throws RegistrationException {
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement ...");
-    };
-
-    /**
-     * Creates an access group in the OIDC provider. An OIDC access group
-     * corresponds to an OSCM organization. If the access group already exists,
-     * no new one will be created, but the existing one will be returned.
-     * 
-     * @param tenantId
-     *            the it of the tenant
-     * @param groupName
-     *            the name of the group. Usually it is the creaded users name
-     * @return the groupId
      * @throws RegistrationException
      *             when a error occurs when the oidc provider is called
      */
-    default String createAccessGroupInOIDCProvider(String tenantId,
-            String groupName) throws RegistrationException {
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement ...");
+    default VOUserDetails loadUserDetailsFromOIDCProvider(String userId, String tenantId)
+            throws RegistrationException {
+        throw new java.lang.UnsupportedOperationException("Please implement ...");
     };
 
     /**
-     * Add a user to a group. An OIDC access group
-     * corresponds to an OSCM organization. If the given User belongs already to a OIDC group
-     * an exception is thrown. 
+     * Creates an access group in the OIDC provider directory.
+     * <p>
+     * An OIDC access group that is used in OSCM corresponds to one organization
+     * in OSCM. If the access group already exists, no new one will be created,
+     * but this existing one will be returned.
+     * <p>
+     * <b>Important:</b> Following naming convention is required on the access
+     * group in the OIDC provider directory, in order to match with the
+     * organization in OSCM: <code>
+     *        group name := OSCM_&lt;organization name&gt;  
+     * </code>
      * 
+     * @param tenantId
+     *            the ID of the tenant
+     * @param groupName
+     *            the name of the group.
+     * 
+     * @return the groupId
+     * @throws RegistrationException
+     *             when an error occurs at the OIDC provider endpoint
+     */
+    default String createAccessGroupInOIDCProvider(String tenantId, String groupName)
+            throws RegistrationException {
+        throw new java.lang.UnsupportedOperationException("Please implement ...");
+    };
+
+    /**
+     * Assigns a given user to the specified access group in the OIDC provider
+     * directory.
+     * <p>
+     * An OIDC access group that is used in OSCM corresponds to one organization
+     * in OSCM. An exception is thrown if the given user is already assigned to
+     * an access group in the OIDC provider directory.
+     * <p>
+     * 
+     * <b>Important:</b> Following naming convention is required on the access
+     * group in the OIDC provider directory, in order to match with the
+     * organization in OSCM: <code>
+     *        group name := OSCM_&lt;organization name&gt;  
+     * </code>
+     *
      * @param groupid
      *            the groupId of the group where the user should be add
      * @param tenantId
@@ -884,12 +886,33 @@ public interface IdentityService {
      * @param userInfo
      *            the userInfoObject
      * @return the groupId
-     * @throws RegistrationException when a error occurs when the oidc provider is called
+     * @throws RegistrationException
+     *             when an error occurs at the OIDC provider endpoint
      */
-    default void addMemberToAccessGroupInOIDCProvider(String groupId,
-            String tenantId, VOUserDetails userInfo)
-            throws RegistrationException {
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement ...");
+    default void addMemberToAccessGroupInOIDCProvider(String groupId, String tenantId,
+            VOUserDetails userInfo) throws RegistrationException {
+        throw new java.lang.UnsupportedOperationException("Please implement ...");
     };
+
+    /**
+     * Synchronize the OIDC groups and users with the OSCM organizations.
+     * <p>
+     * All newly created users will be retrieved from the OIDC tenant directory
+     * and imported in the OSCM database. Therefore each user in the tenant
+     * directory of the OIDC provider has to be assigned to <i>exactly one</i>
+     * access group that maps to the name of the corresponding organization in
+     * OSCM, to which the user should be assigned to.
+     * <p>
+     * 
+     * <b>Important:</b> Following naming convention is required on the access
+     * group in the OIDC provider directory, in order to match with the
+     * organization in OSCM: <code>
+     *        group name := OSCM_&lt;organization name&gt;  
+     * </code>
+     * 
+     * @return if the synchronization was successful or not.
+     */
+    default boolean synchronizeUsersAndGroupsWithOIDCProvider() {
+        return false;
+    }
 }
