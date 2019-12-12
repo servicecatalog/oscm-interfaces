@@ -53,9 +53,9 @@ public class BSSWebServiceFactory {
 
         Service service = Service.create(new URL(wsdlUrl), serviceQName);
 
-        T client = service.getPort(
-                new QName(targetNamespace,
-                        serviceClass.getSimpleName()), serviceClass);
+        T client = 
+                service.getPort(serviceClass);
+                
 
         setBinding((BindingProvider) client, authentication.getUserName(),
                 authentication.getPassword());
