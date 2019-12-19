@@ -265,6 +265,10 @@ public enum ConfigurationKey {
     @Doc({ "The offset of the timer for removing inactive on-behalf users.",
             "The offset is in milliseconds, based on January 1, 00:00." })
     TIMER_INTERVAL_INACTIVE_ON_BEHALF_USERS_OFFSET(false, "0", "long", Long.valueOf(0L), null, false),
+    
+    @Doc({ "The offset of the timer for synchronizing users with the OIDC provider.",
+        "The offset is in milliseconds, based on January 1, 00:00." })
+    TIMER_INTERVAL_SYNCHRONIZE_USERS_OFFSET(false, "0", "long", Long.valueOf(0L), null, false),
 
     @Doc({ "Defines the timeout for outgoing JAX-WS calls. After the time intervall is passed a timeout exception is thrown by the JAX-WS framework." })
     @Example("30000")
@@ -347,10 +351,10 @@ public enum ConfigurationKey {
     @Example("<path>/ssl.p12")
     SSO_SIGNING_KEYSTORE(false, "/opt/apache-tomee/conf/ssl.p12", "string"),
 
-    @Doc({ "The ID of the default tenant for user authentication in SAML_SP mode. ",
-           "The value must consist of 8 alphanumeric characters." })
-    @Example("8f96dede")
-    SSO_DEFAULT_TENANT_ID(false, "8f96dede", "string", false, 8L),
+    @Doc({ "The ID of the default tenant for user authentication in OIDC mode. ",
+           "The value must consist of 7 alphanumeric characters." })
+    @Example("default")
+    SSO_DEFAULT_TENANT_ID(false, "default", "string", false, 7L),
 
     @Doc({ "The unique entity ID of the IdP system used for authentication in SAML_SP mode. ", 
            "The ID is used for verifying that the response to an authentication request ",

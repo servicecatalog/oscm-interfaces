@@ -16,7 +16,6 @@ import org.oscm.internal.types.exception.NonUniqueBusinessKeyException;
 import org.oscm.internal.types.exception.ObjectNotFoundException;
 import org.oscm.internal.types.exception.TenantDeletionConstraintException;
 import org.oscm.internal.vo.VOTenant;
-import org.oscm.internal.vo.VOTenantSetting;
 
 /**
  * Class for managing tenants
@@ -72,16 +71,7 @@ public interface TenantService {
      */
     VOTenant getTenantByKey(long key) throws ObjectNotFoundException;
 
-    /**
-     * Persists tenant IDP settings.
-     * @param tenantSettings list of settings to persist.
-     * @param voTenant tenant to which settings belongs
-     * @throws NonUniqueBusinessKeyException if settings' business key is not unique
-     * @throws ObjectNotFoundException if tenant is not found
-     */
-    void addTenantSettings(List<VOTenantSetting> tenantSettings, VOTenant voTenant) throws
-        NonUniqueBusinessKeyException, ObjectNotFoundException;
-
+  
     /**
      * Removes all settings for tenant
      * @param key tenant key to which settings are being removed
@@ -89,13 +79,7 @@ public interface TenantService {
      */
     void removeTenantSettings(long key) throws ObjectNotFoundException;
 
-    /**
-     * Retrieves settings for tenant
-     * @param key tenant key to which settings are being returned.
-     * @return list of Tenant settings
-     */
-    List<VOTenantSetting> getSettingsForTenant(long key);
-
+  
     /**
      * Finds tenant by its id pattern.
      * @param tenantIdPattern set of characters to which tenant should be found.
