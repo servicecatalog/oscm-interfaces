@@ -351,11 +351,6 @@ public enum ConfigurationKey {
     @Example("<path>/ssl.p12")
     SSO_SIGNING_KEYSTORE(false, "/opt/apache-tomee/conf/ssl.p12", "string"),
 
-    @Doc({ "The ID of the default tenant for user authentication in OIDC mode. ",
-           "The value must consist of 7 alphanumeric characters." })
-    @Example("default")
-    SSO_DEFAULT_TENANT_ID(false, "default", "string", false, 7L),
-
     @Doc({ "The unique entity ID of the IdP system used for authentication in SAML_SP mode. ", 
            "The ID is used for verifying that the response to an authentication request ",
            "is returned by the correct IdP." })
