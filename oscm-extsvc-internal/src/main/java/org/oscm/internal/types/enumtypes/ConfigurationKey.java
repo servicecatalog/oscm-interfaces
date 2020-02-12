@@ -280,15 +280,6 @@ public enum ConfigurationKey {
     @Example("INTERNAL")
     AUTH_MODE(true, "INTERNAL", "string", true),
 
-    @Doc({ "URL to the SAML Identity Provider (IdP) used by CT-MG. To be considered only if the configuration setting AUTH_MODE is set ",
-            "to any other option than INTERNAL." })
-    @Example("https://<host>:<port>/<RedirectServiceEndpoint>")
-    SSO_IDP_URL(false, null, "url"),
-
-    @Doc({ "The http method (GET or POST) used for the authentication request to the SAML Identity Provider (IdP)." })
-    @Example("POST")
-    SSO_IDP_AUTHENTICATION_REQUEST_HTTP_METHOD(false, "POST", "string"),
-
     @Doc({ "Path to the trusstore holding the IdP certificate." })
     @Example("<path>/cacerts.jks")
     SSO_IDP_TRUSTSTORE(false, null, "string"),
@@ -297,14 +288,6 @@ public enum ConfigurationKey {
     @Example("changeit")
     SSO_IDP_TRUSTSTORE_PASSWORD(false, null, "password"),
 
-    @Doc({ "Unique identifier of the requesting service provider for the SAML Identity Provider (IdP)." })
-    @Example("CT_MG")
-    SSO_ISSUER_ID(false, null, "string"),
-
-    @Doc({ "Encryption key length for STS." })
-    @Example("128")
-    SSO_STS_ENCKEY_LEN(false, null, "long", Long.valueOf(1L), Long.valueOf(Integer.MAX_VALUE), false),
-
     @Doc({ "Specifies whether the audit logging is enabled" })
     @Example("false")
     AUDIT_LOG_ENABLED(true, "false", "boolean"),
@@ -312,18 +295,6 @@ public enum ConfigurationKey {
     @Doc({ "Specifies the batch size for audit logging" })
     @Example("100")
     AUDIT_LOG_MAX_ENTRIES_RETRIEVED(true, "1000", "long", Long.valueOf(1), Long.valueOf(1000), false),
-
-    @Doc({ "URL of STS service" })
-    @Example("https://<host>:<port>/<ServiceEndpoint>")
-    SSO_STS_URL(false, null, "url"),
-
-    @Doc({ "MetadataReference URL of STS service" })
-    @Example("https://<host>:<port>/<MEXAddress>")
-    SSO_STS_METADATA_URL(false, null, "url"),
-
-    @Doc({ "URL of the Identity Provider's single logout service" })
-    @Example("https://<host>:<port>/<LogoutServiceEndpoint>")
-    SSO_LOGOUT_URL(false, null, "url", false),
 
     @Doc({ "The maximum number of users that can be registered on the platform" })
     @Example("10")
@@ -350,12 +321,6 @@ public enum ConfigurationKey {
     @Doc({ "The path of the keystore holding the private key for signing SAML and custom tab requests." })
     @Example("<path>/ssl.p12")
     SSO_SIGNING_KEYSTORE(false, "/opt/apache-tomee/conf/ssl.p12", "string"),
-
-    @Doc({ "The unique entity ID of the IdP system used for authentication in SAML_SP mode. ", 
-           "The ID is used for verifying that the response to an authentication request ",
-           "is returned by the correct IdP." })
-    @Example("IDP_ID")
-    SSO_IDP_SAML_ASSERTION_ISSUER_ID(false, "default", "string", false),
 
     @Doc({ "Hashing algorithm used in signing SAML communication" })
     @Example("SHA1")
