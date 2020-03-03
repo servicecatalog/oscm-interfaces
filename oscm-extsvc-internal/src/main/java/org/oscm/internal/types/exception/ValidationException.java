@@ -533,7 +533,7 @@ public class ValidationException extends SaaSApplicationException {
         USER_ID_DUPLICATED,
 
         /**
-         * Given organization name already exist
+         * Given organization name already exists
          */
         ORGANIZATION_NAME_DUPLICATED;
 

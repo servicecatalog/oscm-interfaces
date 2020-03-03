@@ -96,7 +96,7 @@ public interface TenantService {
     boolean doOrgUsersExistInTenant(String orgId, long tenantKey);
 
     /**
-     * Checks if organization with given name exist in tenant.
+     * Checks if organization with given name exists in tenant.
      * @param orgName Organization name
      * @param tenantId tenant id
      * @return if organization exist
