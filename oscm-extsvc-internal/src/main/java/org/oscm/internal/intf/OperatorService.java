@@ -9,6 +9,7 @@
 package org.oscm.internal.intf;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -711,4 +712,17 @@ public interface OperatorService {
      * @return a collection of subscription usage report
      */
     Collection<VOSubscriptionUsageEntry> getSubscriptionUsageReport();
+    
+    /**
+     * Returns a String map of organization identifiers where each entry is a &lt;id, name&gt; pair from organizations of the given role type.
+     * Note that since 18.1 the organization name is a mandatory attribute.   
+     * 
+     * @param r - the organizations role type of requested identifiers   
+     * @return see above
+     */
+    public default Map<String, String> getOrganizationIdentifiers(OrganizationRoleType r) {
+        // Just a compile saving dummy
+        // TODO remove default body when all OSCM repository implementations are available. 
+        return Collections.emptyMap();
+    }
 }
