@@ -714,7 +714,7 @@ public interface OperatorService {
     Collection<VOSubscriptionUsageEntry> getSubscriptionUsageReport();
     
     /**
-     * Returns a String map of organization identifiers where each entry is a &lt;key, name&gt; pair from organizations of the given role type.
+     * Returns a String map of organization identifiers where each entry is a &lt;id, name&gt; pair from organizations of the given role type.
      * Note that since 18.1 the organization name is a mandatory attribute.   
      * 
      * @param r - the organizations role type of requested identifiers   
