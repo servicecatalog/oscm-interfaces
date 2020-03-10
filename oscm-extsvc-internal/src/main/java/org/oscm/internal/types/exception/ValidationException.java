@@ -530,7 +530,12 @@ public class ValidationException extends SaaSApplicationException {
          */
         TIMER_USERCOUNT_EXPIRATIONDATE_INVALID,
         
-        USER_ID_DUPLICATED;
+        USER_ID_DUPLICATED,
+
+        /**
+         * Given organization name already exists
+         */
+        ORGANIZATION_NAME_DUPLICATED;
 
         private String messageKey;
 
