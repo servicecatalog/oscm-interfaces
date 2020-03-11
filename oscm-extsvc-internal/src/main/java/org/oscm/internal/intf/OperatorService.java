@@ -714,13 +714,13 @@ public interface OperatorService {
     Collection<VOSubscriptionUsageEntry> getSubscriptionUsageReport();
     
     /**
-     * Returns a String map of organization identifiers where each entry is a &lt;id, name&gt; pair from organizations of the given role type.
+     * Returns a String map of organization identifiers where each entry is a &lt;id, name&gt; pair from organizations of the given role types.
      * Note that since 18.1 the organization name is a mandatory attribute.   
      * 
      * @param r - the organizations role type of requested identifiers   
      * @return see above
      */
-    public default Map<String, String> getOrganizationIdentifiers(OrganizationRoleType r) {
+    public default Map<String, String> getOrganizationIdentifiers(List<OrganizationRoleType> l) {
         // Just a compile saving dummy
         // TODO remove default body when all OSCM repository implementations are available. 
         return Collections.emptyMap();
