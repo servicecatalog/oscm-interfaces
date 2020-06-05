@@ -156,7 +156,7 @@ public interface BrandService {
    *     the passed id is invalid or the belonging marketplace can not be found, a empty string will
    *     be returned.
    */
-  public void getMarketplaceMobileStage(String marketplaceId, String localeString);
+  public String getMarketplaceMobileStage(String marketplaceId, String localeString);
 
   /**
    * Sets the content of the mobile stage for a specific marketplace and a specific locale. If the
