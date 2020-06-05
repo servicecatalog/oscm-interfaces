@@ -156,7 +156,7 @@ public interface BrandService {
    *     the passed id is invalid or the belonging marketplace can not be found, a empty string will
    *     be returned.
    */
-  public void getMarketplaceMobileStage(String marketplaceId, String localeString);
+  public String getMarketplaceMobileStage(String marketplaceId, String localeString);
 
   /**
    * Sets the content of the mobile stage for a specific marketplace and a specific locale. If the
@@ -187,5 +187,19 @@ public interface BrandService {
    *     marketplace identified by the passed Id.
    */
   public List<VOLocalizedText> getMarketplaceStageLocalization(String marketplaceId)
+      throws ObjectNotFoundException, OperationNotPermittedException;
+
+  /**
+   * Returns all saved mobile stages and their locale for the marketplace identified by the passed
+   * id.
+   *
+   * @param marketplaceId the Id for which the stage contents should be read
+   * @return the list of existing stages and their locale
+   * @throws ObjectNotFoundException in case thrown in case the marketplace could not be found for
+   *     the passed Id.
+   * @throws OperationNotPermittedException thrown in case the caller is not the owner of the
+   *     marketplace identified by the passed Id.
+   */
+  public List<VOLocalizedText> getMarketplaceMobileStageLocalization(String marketplaceId)
       throws ObjectNotFoundException, OperationNotPermittedException;
 }
