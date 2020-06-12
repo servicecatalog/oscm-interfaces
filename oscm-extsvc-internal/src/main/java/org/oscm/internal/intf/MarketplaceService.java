@@ -386,7 +386,7 @@ public interface MarketplaceService {
    *     style sheet <code>bootstrap.min.css</code> if none has been defined.
    * @throws ObjectNotFoundException if the marketplace is not found
    */
-  String getcustomBootstrapUrl(String marketplaceId) throws ObjectNotFoundException;
+  String getCustomBootstrapUrl(String marketplaceId) throws ObjectNotFoundException;
 
   /**
    * Stores the URL that defines the customized Bootstrap style sheet (CSS) for the specified
