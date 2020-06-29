@@ -56,7 +56,7 @@ public enum ConfigurationKey {
     "The HTTPS URL for connecting the oscm-identity service. This setting is required for external authentication in the OIDC mode.",
   })
   @Example("https://<your server>:<your port>/oscm-identity")
-  OIDC_REDIRECT_URL(false, null, "url"),
+  OSCM_IDENTITY_SERVICE_URL(false, null, "url"),
 
   @Doc({
     "URL to specify a Web page that is to be displayed in case the HTTP",
