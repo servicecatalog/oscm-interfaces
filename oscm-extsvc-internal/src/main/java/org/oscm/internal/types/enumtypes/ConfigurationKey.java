@@ -57,7 +57,7 @@ public enum ConfigurationKey {
     " If the proxy is used, no port is required"
   })
   @Example("https://<your server>:<your port>/oscm-identity")
-  LOGIN_REDIRECT_URL(true, null, "url"),
+  OIDC_REDIRECT_URL(true, null, "url"),
 
   @Doc({
     "URL to specify a Web page that is to be displayed in case the HTTP",
