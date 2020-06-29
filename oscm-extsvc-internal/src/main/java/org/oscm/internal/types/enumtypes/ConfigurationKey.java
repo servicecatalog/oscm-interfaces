@@ -53,11 +53,10 @@ public enum ConfigurationKey {
   BASE_URL_HTTPS(true, null, "url"),
 
   @Doc({
-    "The redirect URL for OIDC mode. Required for a succesfull login.",
-    " If the proxy is used, no port is required"
+    "The HTTPS URL for connecting the oscm-identity service. This setting is required for external authentication in the OIDC mode.",
   })
   @Example("https://<your server>:<your port>/oscm-identity")
-  OIDC_REDIRECT_URL(true, null, "url"),
+  OIDC_REDIRECT_URL(false, null, "url"),
 
   @Doc({
     "URL to specify a Web page that is to be displayed in case the HTTP",
