@@ -202,20 +202,19 @@ public interface APPlatformService {
 
   /**
    * Returns a collection of the IDs of all service instances that are managed by APP in the context
-   * of the controller specified by given ID, and that are matching the given filter condition.
+   * of the controller specified by given ID and that belong to the given customer organization.
    *
    * @param controllerId the ID of the service controller
    * @param authentication a <code>PasswordAuthentication</code> object identifying a technology
    *     manager registered in the organization which is responsible for the controller
-   * @param filter - list only instances with given instance parameter. This string parameter
-   *     denotes the key name of the parameter.
+   * @param organizationId - given organization.
    * @return a collection of the IDs of service instances
    * @throws AuthenticationException
    * @throws ConfigurationException
    * @throws APPlatformException
    */
   default Collection<String> listServiceInstances(
-      String controllerId, String filter, PasswordAuthentication authentication)
+      String controllerId, String organizationId, PasswordAuthentication authentication)
       throws APPlatformException {
     return listServiceInstances(controllerId, authentication);
   }
