@@ -12,8 +12,6 @@ package org.oscm.app.v2_0.intf;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
 
 import org.oscm.app.v2_0.data.PasswordAuthentication;
 import org.oscm.app.v2_0.data.ProvisioningSettings;
@@ -209,17 +207,15 @@ public interface APPlatformService {
    * @param controllerId the ID of the service controller
    * @param authentication a <code>PasswordAuthentication</code> object identifying a technology
    *     manager registered in the organization which is responsible for the controller
-   * @param filter - a condition predicate for filtering service instances with given parameters.
-   *     Instances are excluded from the result collection only if {@link Predicate#test()} returns <code>true</code>.
+   * @param filter - list only instances with given instance parameter. This string parameter
+   *     denotes the key name of the parameter.
    * @return a collection of the IDs of service instances
    * @throws AuthenticationException
    * @throws ConfigurationException
    * @throws APPlatformException
    */
   default Collection<String> listServiceInstances(
-      String controllerId,
-      Predicate<Map<String, Setting>> filter,
-      PasswordAuthentication authentication)
+      String controllerId, String filter, PasswordAuthentication authentication)
       throws APPlatformException {
     return listServiceInstances(controllerId, authentication);
   }
