@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/servicecatalog/oscm-interfaces.svg?branch=master)](https://travis-ci.org/servicecatalog/oscm-interfaces)
+[![Build Status](https://travis-ci.com/servicecatalog/oscm-interfaces.svg?branch=master)](https://travis-ci.com/servicecatalog/oscm-interfaces)
 [![artifacts](https://jitpack.io/v/servicecatalog/oscm-interfaces.svg)](https://jitpack.io/#servicecatalog/oscm-interfaces)
 
 # oscm-interfaces
