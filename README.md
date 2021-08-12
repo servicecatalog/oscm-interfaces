@@ -1,4 +1,4 @@
-[![Maven](https://github.com/servicecatalog/oscm-interfaces/actions/workflows/ant.yml/badge.svg)](https://github.com/servicecatalog/oscm-interfaces/actions)
+[![Maven](https://github.com/servicecatalog/oscm-interfaces/actions/workflows/maven.yml/badge.svg)](https://github.com/servicecatalog/oscm-interfaces/actions)
 [![artifacts](https://jitpack.io/v/servicecatalog/oscm-interfaces.svg)](https://jitpack.io/#servicecatalog/oscm-interfaces)
 
 # oscm-interfaces
